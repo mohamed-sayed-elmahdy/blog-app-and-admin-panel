@@ -36,8 +36,9 @@ This project is built using **Next.js**, a React-based framework for building se
    - **Select a TypeScript setup**: I chose **No**, as we won't use TypeScript in this app.
    - **Choose a template**: I selected **Tailwind CSS**, as we are using it for styling.
    - **Decide whether to use ESLint**: I chose **Yes** for ESLint configuration to ensure code quality.
-   - **Enable the src directory**: I chose **Yes**, as it helps organize files better and it will help us if we need scalable app.
-   - **Include the experimental app directory**: I chose **Yes**, to use the App Router for routing and layouts.
+   - **Enable the src directory**: I chose **Yes**, as it improves file organization and scalability for the project.
+   - **Include the experimental app directory**: I chose **Yes**, to leverage the App Router for routing and layouts, enhancing flexibility and performance.
+   - **Customize the default import alias (@/\*)**: I chose **Yes**, customizing the import alias to improve clarity and align with project structure.
 
 4. Once you complete the prompts, a new folder named `blog-app-and-admin-panel` will be created. This folder will include:
 
@@ -134,5 +135,4 @@ You should see the message:
 
 Congratulations! Your application is now running locally. 🎉
 
-
-### Step 4: 
+### Step 4:
