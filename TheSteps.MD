@@ -1,4 +1,4 @@
-## Blog App and Admin Panel
+### Blog App and Admin Panel
 
 This project is built using **Next.js**, a React-based framework for building server-side rendered and static web applications.
 
