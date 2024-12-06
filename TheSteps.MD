@@ -4,7 +4,9 @@ This project is built using **Next.js**, a React-based framework for building se
 
 ### Step #1: Create a Next.js App
 
-1. Open your integrated terminal in VS Code, To open the terminal in Visual Studio Code:
+1. Open your integrated terminal in VS Code:
+
+To open the terminal in Visual Studio Code there is two methods:
 
 #### **Method 1: Using the Menu**
 
@@ -34,6 +36,7 @@ This project is built using **Next.js**, a React-based framework for building se
 3. After running the command, you will be prompted to:
 
    - **Select a TypeScript setup**: I chose **No**, as we won't use TypeScript in this app.
+   Select a TypeScript setup: Choose No, because we are keeping the project simple by using JavaScript only.
    - **Choose a template**: I selected **Tailwind CSS**, as we are using it for styling.
    - **Decide whether to use ESLint**: I chose **Yes** for ESLint configuration to ensure code quality.
    - **Enable the src directory**: I chose **Yes**, as it improves file organization and scalability for the project.
