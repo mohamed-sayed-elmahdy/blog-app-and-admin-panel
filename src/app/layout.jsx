@@ -1,31 +1,23 @@
-import localFont from "next/font/local";
+import { Outfit } from "next/font/google";
 import "./globals.css";
+import { Providers } from './providers'
+import Navbar from "@/components/Navbar";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
+const outfit = Outfit({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap", 
 });
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
-
 export const metadata = {
   title: "StoryCraft",
   description:
-    "StoryCraft – A Full Stack Blogging Platform Built with Next.js & MongoDB, Empowering Creators to Share and Manage Content Seamlessly",
+    "Effortlessly create, customize, and manage your blogs with our advanced Blog App and Admin Panel. Designed for speed, flexibility, and user-friendly control to help you grow your online presence.",
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
+    <html lang="en" suppressHydrationWarning>
+      <body className={outfit.className}><Providers><Navbar/>{children}</Providers></body>
     </html>
   );
 }

@@ -7,11 +7,20 @@ module.exports = {
   ],
   theme: {
     extend: {
+      // colors: {
+      //   background: "var(--background)",
+      //   foreground: "var(--foreground)",
+      // },
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-      },
+        'text': 'var(--text)',
+        'background': 'var(--background)',
+        'primary': 'var(--primary)',
+        'secondary': 'var(--secondary)',
+        'accent': 'var(--accent)',
+       },
+       
     },
   },
   plugins: [],
+  darkMode: "class"
 };
