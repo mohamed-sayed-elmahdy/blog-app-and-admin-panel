@@ -43,7 +43,7 @@ This project is built using **Next.js**, a React-based framework for building se
 4. Once you complete the prompts, a new folder named `blog-app-and-admin-panel` will be created. This folder will include:
 
    - **`app/`**: Contains the App Router setup, including default files like `page.js`.
-   - **`public/`**: A folder for static assets like images, logOs.
+   - **`public/`**: A folder for static assets like images, logos.
    - **`styles/`**: Default CSS files such as `globals.css` and `tailwind.css`.
    - **`package.json`**: Includes scripts and dependencies, as shown:
 
