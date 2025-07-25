@@ -2,32 +2,49 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  :root {
-    --text: #0d0326;
-    --background: #f1ecfe;
-    --primary: #2f0986;
-    --secondary: #f56ba4;
-    --accent: #c80e11;
+:root {
+  /* Dark Mode (Default) */
+  --bg-blur: rgba(0, 0, 0, 0.05);
+  --border-blur: rgba(255, 255, 255, 0.25);
+  --text: white;
+  --secondary-text-color: rgba(0, 0, 0);
+  --text-hover: #ababab;
+  --text-active: #ababab;
+  --text-muted: #9ca3af;
+  --text-lowMuted: #d0d0d0;
+  --btn-border: rgba(255, 255, 255, 0.2);
+  --btn-border-hover: rgba(255, 255, 255, 0.3);
+  --bg-green: #16a34a;
+  --text-green: #4ade80;
+  --bg-card: rgba(255, 255, 255, 0.05);
+  --border-soft: rgba(255, 255, 255, 0.1);
+  --black-text: rgba(0, 0, 0);
+  --white-text: rgba(255, 255, 255);
+  --bg-white: rgba(255, 255, 255);
+  --bg-black: rgba(0, 0, 0);
+  --white-border: rgba(255, 255, 255);
+  --max-width: 1480px;
+}
 
-    --hover-text: #22064d;
-    --hover-background: #e9e3fd;
-    --hover-primary: #3d0bb3;
-    --hover-secondary: #fa83b5;
-    --hover-accent: #f82327;
-  }
-
-  .dark {
-    --text: #e3d9fc;
-    --background: #060113;
-    --primary: #9f79f6;
-    --secondary: #940a44;
-    --accent: #f1373a;
-
-    --hover-text: #b9a7e9;
-    --hover-background: #080117;
-    --hover-primary: #b58af8;
-    --hover-secondary: #a01458;
-    --hover-accent: #f45659;
-  }
+[data-theme="light"] {
+  /* ☀️ Light Mode */
+  --bg-blur: rgba(255, 255, 255, 0.05);
+  --border-blur: rgba(0, 0, 0, 0.25);
+  --text: black;
+  --secondary-text-color: rgba(255, 255, 255);
+  --text-hover: #5d5d5d;
+  --text-active: #5d5d5d;
+  --text-muted: #9ca3af;
+  --text-lowMuted: #d0d0d0;
+  --btn-border: rgba(0, 0, 0, 0.2);
+  --btn-border-hover: rgba(0, 0, 0, 0.3);
+  --bg-green: #16a34a;
+  --text-green: #4ade80;
+  --bg-card: rgba(255, 255, 255, 0.05);
+  --border-soft: rgba(0, 0, 0, 0.1);
+  --black-text: rgba(255, 255, 255);
+  --white-text: rgba(0, 0, 0);
+  --bg-white: rgba(0, 0, 0);
+  --bg-black: rgba(255, 255, 255);
+  --white-border: rgba(0, 0, 0);
 }

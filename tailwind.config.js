@@ -7,18 +7,13 @@ module.exports = {
   ],
   theme: {
     extend: {
-      // colors: {
-      //   background: "var(--background)",
-      //   foreground: "var(--foreground)",
-      // },
       colors: {
-        'text': 'var(--text)',
-        'background': 'var(--background)',
-        'primary': 'var(--primary)',
-        'secondary': 'var(--secondary)',
-        'accent': 'var(--accent)',
-       },
-       
+        background: "var(--background)",
+        foreground: "var(--foreground)",
+      },
+      screens: {
+        'xxl-custom': '1480px',
+      },
     },
   },
   plugins: [],

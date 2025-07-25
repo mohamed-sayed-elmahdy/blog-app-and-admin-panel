@@ -21,7 +21,7 @@ To open the terminal in Visual Studio Code there is two methods:
 
 #### **What Happens Next?**
 
-- A terminal window will appear at the bottom of the VS Code interface.
+- A terminal window will appear at the bottom of the VS Code or your IDE interface .
 
 2. Run(write) the following command in the terminal to create a new Next.js app:
 
@@ -36,7 +36,7 @@ To open the terminal in Visual Studio Code there is two methods:
 3. After running the command, you will be prompted to:
 
    - **Select a TypeScript setup**: I chose **No**, as we won't use TypeScript in this app.
-   Select a TypeScript setup: Choose No, because we are keeping the project simple by using JavaScript only.
+     Select a TypeScript setup: Choose No, because we are keeping the project simple by using JavaScript only.
    - **Choose a template**: I selected **Tailwind CSS**, as we are using it for styling.
    - **Decide whether to use ESLint**: I chose **Yes** for ESLint configuration to ensure code quality.
    - **Enable the src directory**: I chose **Yes**, as it improves file organization and scalability for the project.
@@ -120,7 +120,7 @@ To start the live server for your app, run the following command in your termina
 npm run dev
 ```
 
-Once the server starts, you should see output similar to this:
+Once the server starts, you should see output similar to this in the terminal:
 
 ```bash
 ready - started server on 0.0.0.0:3000, url: http://localhost:3000
@@ -136,8 +136,6 @@ You should see the message in our app:
 
 Congratulations! Your application is now running locally. 🎉
 **Note:** You can customize the content before or after running the live server—feel free to experiment!
-
-Here’s how you can update **Step #4** to guide the user through changing `.js` files to `.jsx`:
 
 ### Step #4: Update this Files Extension `app/page.js` and `app/layout.js` to `.jsx` not `js`
 
@@ -210,7 +208,7 @@ In this step, we'll integrate the **Outfit** font into your application and ensu
 
 #### Steps:
 
-1. **Import the Outfit Font:**
+1. **Import the Outfit Font in the `layout.jsx` file :**
    Start by importing the `Outfit` font from `next/font/google`. This utility allows you to seamlessly include Google Fonts in your project.
 
    ```javascript
@@ -243,7 +241,7 @@ In this step, we'll integrate the **Outfit** font into your application and ensu
    **After:**
 
    ```javascript
-   <body className={outfit.className}>
+    <body className={`${outfit.className} antialiased`}>
    ```
 
 5. **Finalize the Code:**
@@ -252,26 +250,33 @@ In this step, we'll integrate the **Outfit** font into your application and ensu
    ```javascript
    import { Outfit } from "next/font/google";
    import "./globals.css";
+   import { Providers } from "./providers";
+   import Navbar from "@/components/Navbar";
 
-   const outfit = Outfit({
-     subsets: ["latin"],
-     weight: ["400", "500", "600", "700"],
-     display: "swap",
+  const outfit = Outfit({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
    });
 
    export const metadata = {
-     title: "StoryCraft",
-     description:
-       "Effortlessly create, customize, and manage your blogs with our advanced Blog App and Admin Panel. Designed for speed, flexibility, and user-friendly control to help you grow your online presence.",
-   };
+  title: "StoryCraft",
+  description:
+    "Effortlessly create, customize, and manage your blogs with our advanced Blog App and Admin Panel. Designed for speed, flexibility, and user-friendly control to help you grow your online presence.",
+    };
 
-   export default function RootLayout({ children }) {
-     return (
-       <html lang="en">
-         <body className={outfit.className}>{children}</body>
-       </html>
-     );
-   }
+  export default function RootLayout({ children }) {
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${outfit.className} antialiased`}>
+        <Providers>
+          <Navbar />
+          {children}
+        </Providers>
+      </body>
+    </html>
+  );
+  }
    ```
 
 6. **Verify in the Browser:**
@@ -402,8 +407,8 @@ npm install react-icons
 
 ### Step #9: Create `Navbar.jsx` Component
 
-In this step, we’re designing the **Navbar**, which will act as a central navigation element for our application. 
-The **Navbar** includes a logo, a "Get Start" button, and will later feature a **ThemeSwitch** icon for toggling 
+In this step, we’re designing the **Navbar**, which will act as a central navigation element for our application.
+The **Navbar** includes a logo, a "Get Start" button, and will later feature a **ThemeSwitch** icon for toggling
 between light and dark modes.
 
 Let me First show you the **Final Output** then explain it to you step by step:
@@ -516,12 +521,13 @@ for future features like theme switching. 🎉
 
 In **Step #10**, we will:
 
-- Import This Navbar in The `layout.jsx` file to show this navabr in the whole application 
+- Import This Navbar in The `layout.jsx` file to show this navabr in the whole application
 
-### step 10: Import This Navbar in The `layout.jsx` file to show this navabr in the whole application 
+### step 10: Import This Navbar in The `layout.jsx` file to show this navabr in the whole application
 
 #### **1. Importing the Navbar Component**
-In the `layout.jsx` file, you add this line of code: 
+
+In the `layout.jsx` file, you add this line of code:
 
 ```javascript
 import Navbar from "@/components/Navbar";
@@ -541,10 +547,12 @@ import Navbar from "@/components/Navbar";
 
 This is because during the setup process, we chose **Yes** when prompted to:
 
-**"Customize the default import alias (@/*)"**
+**"Customize the default import alias (@/\*)"**
 
 ###### **Reason for Choosing Yes:**
+
 1. **Improved Clarity**:
+
    - Using the `@` symbol makes import paths shorter and easier to read.
    - For example, instead of writing a long relative path like:
      ```javascript
@@ -556,31 +564,37 @@ This is because during the setup process, we chose **Yes** when prompted to:
      ```
 
 2. **Aligning with Project Structure**:
+
    - The `@` symbol is an alias for the `src` directory. This aligns imports with the structure of the project, making it more intuitive to locate files.
 
 3. **Easier Refactoring**:
    - If you move files or folders, the `@` alias helps avoid issues with broken relative paths, simplifying the process of updating imports.
-By customizing this setting, we enhanced our project's readability, maintainability, and scalability! 
+     By customizing this setting, we enhanced our project's readability, maintainability, and scalability!
+
 ---
 
 #### **2. Why Import the Navbar in `layout.jsx`?**
 
 - **Global Visibility**:
+
   - The `layout.jsx` file is the **root layout** for your application. Any component placed here, like the `Navbar`, will be displayed **on every page** of the app. This ensures the navbar is accessible wherever users navigate.
 
 - **Consistency**:
+
   - Importing the `Navbar` here avoids duplicating its code in each individual page. This not only keeps the code clean but also ensures a consistent look and feel across the app.
 
 - **Ease of Maintenance**:
+
   - If you ever need to update or modify the `Navbar`, you only need to edit the `Navbar` component in one place (`components/Navbar.jsx`). Changes will automatically apply to all pages.
 
 - **User Experience**:
+
   - A persistent navbar allows users to quickly navigate between different parts of the app without scrolling or searching for navigation links.
 
 - **Logical Placement**:
-   - The `layout.jsx` file is specifically meant for defining shared UI elements like headers, footers, or navigation bars. The `Navbar` logically belongs here as part of the app's global structure.
----
+  - The `layout.jsx` file is specifically meant for defining shared UI elements like headers, footers, or navigation bars. The `Navbar` logically belongs here as part of the app's global structure.
 
+---
 
 #### **3.Where to Place the Navbar Component**
 
@@ -591,7 +605,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={outfit.className}>
-        <Navbar /> {/* Puting the Navbar Component here will make the navbar show above other pages content */}
+        <Navbar />{" "}
+        {/* Puting the Navbar Component here will make the navbar show above other pages content */}
         {children}
         {/*And in the next steps will put the footer Component here*/}
       </body>
@@ -599,9 +614,6 @@ export default function RootLayout({ children }) {
   );
 }
 ```
-
-
-
 
 **Final Explanation:**
 By placing the Navbar in `layout.jsx`, it acts as a global header that will always appear at the top of every page in the application. This is a common approach in `Next.js` to create shared layouts.

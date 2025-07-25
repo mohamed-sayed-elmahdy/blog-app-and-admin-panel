@@ -1,12 +1,12 @@
 import { Outfit } from "next/font/google";
 import "./globals.css";
-import { Providers } from './providers'
-import Navbar from "@/components/Navbar";
+
+
 
 const outfit = Outfit({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
-  display: "swap", 
+  display: "swap",
 });
 export const metadata = {
   title: "StoryCraft",
@@ -16,8 +16,10 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={outfit.className}><Providers><Navbar/>{children}</Providers></body>
+    <html lang="en" suppressHydrationWarning="true">
+      <body className={`${outfit.className} antialiased`}>
+        {children}
+      </body>
     </html>
   );
 }
