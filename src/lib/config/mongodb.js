@@ -1,27 +1,27 @@
-import mongoose from "mongoose";
+// import mongoose from "mongoose";
 
 // 1) نقرأ الـ URI من البيئة
-const MONGODB_URI = process.env.MONGODB_URI;
-if (!MONGODB_URI) throw new Error("Please define MONGODB_URI in .env.local");
+// const MONGODB_URI = process.env.MONGODB_URI;
+// if (!MONGODB_URI) throw new Error("Please define MONGODB_URI in .env.local");
 
 // 2) نسترجع كاش سابق أو ننشئ واحد جديد
-let cached = global.mongoose;
-if (!cached) cached = global.mongoose = { conn: null, promise: null };
+// let cached = global.mongoose;
+// if (!cached) cached = global.mongoose = { conn: null, promise: null };
 
-export default async function connectDB() {
+// export default async function connectDB() {
   // 3) لو فيه اتصال جاهز، استخدمه
-  if (cached.conn) return cached.conn;
+  // if (cached.conn) return cached.conn;
 
   // 4) لو مفيش عملية اتصال جارية، ابدأ واحدة وشارك الـ promise
-  if (!cached.promise) {
-    cached.promise = mongoose.connect(MONGODB_URI, { bufferCommands: false })
-      .then((m) => m);
-  }
+  // if (!cached.promise) {
+    // cached.promise = mongoose.connect(MONGODB_URI, { bufferCommands: false })
+      // .then((m) => m);
+  // }
 
   // 5) استنى نفس الـ promise وحط النتيجة في conn لإعادة الاستخدام
-  cached.conn = await cached.promise;
-  return cached.conn;
-}
+  // cached.conn = await cached.promise;
+  // return cached.conn;
+// }
 
 
 
