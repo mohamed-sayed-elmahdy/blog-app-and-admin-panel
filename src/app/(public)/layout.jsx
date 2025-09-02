@@ -10,8 +10,8 @@ export default function PublicLayout({ children }) {
   return (
     <div className="min-h-screen relative">
       {/* 🌌 Background Grids */}
-      <div className="bg-gradient-top-left fixed top-0 left-0 w-[51%] h-[51vh] z-[-1] outline-0 border-none" />
-      <div className="bg-gradient-bottom-left fixed top-1/2 left-0 w-[51%] h-[50vh] z-[-1] outline-0 border-none" />
+      <div className="bg-gradient-top-left fixed top-0 left-0 w-[51.5%] h-[51vh] z-[-1] outline-0 border-none" />
+      <div className="bg-gradient-bottom-left fixed top-1/2 left-0 w-[51.5%] h-[50vh] z-[-1] outline-0 border-none" />
       <div className="bg-gradient-top-right fixed top-0 left-1/2 w-[51.5%] h-[51vh] z-[-1] outline-0 border-none" />
       <div className="bg-gradient-bottom-right fixed top-1/2 left-1/2 w-[51.5%] h-[50vh] z-[-1] outline-0 border-none" />
 

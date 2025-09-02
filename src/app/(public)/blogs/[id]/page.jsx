@@ -13,23 +13,7 @@ export default function BlogPostPage({ params }) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("Blog not found");
   const { id } = use(params);
-
-  const fetchBlogData = () => {
-    const blog = blog_data.find((item) => item.id === Number(id));
-    if (blog) {
-      setBlogData(blog);
-      setLoading(false);
-    }
-    else {
-      setError("Blog not found");
-      setLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    fetchBlogData();
-  }, [id, fetchBlogData]);
-
+ 
 
   if (loading) {
     return <Loading size="large" />;
