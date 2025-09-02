@@ -28,7 +28,7 @@ export default function BlogPostPage({ params }) {
 
   useEffect(() => {
     fetchBlogData();
-  }, [id]);
+  }, [id, fetchBlogData]);
 
 
   if (loading) {

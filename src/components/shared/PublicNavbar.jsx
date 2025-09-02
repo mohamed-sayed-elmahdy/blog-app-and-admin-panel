@@ -67,7 +67,19 @@ function PublicNavbar() {
           >
             Sign In <CiLocationArrow1 className="text-xl" />
           </ButtonLink>
-          {/* Menu Button */}
+      
+          {/* Search Button */}
+          <button
+            type="button"
+            className="flex justify-center items-center rounded-md 
+           transition-colors text-xl sm:text-2xl 
+           text-[var(--text)] border-none"
+            aria-label="Search"
+          >
+            <IoSearch className="text-xl" />
+          </button>
+        <ThemeSwitch />
+            {/* Menu Button */}
           <button
             type="button"
             className="flex md:hidden justify-center items-center rounded-md
@@ -82,17 +94,6 @@ function PublicNavbar() {
           >
             <HiOutlineMenu className="text-xl" />
           </button>
-          {/* Search Button */}
-          <button
-            type="button"
-            className="flex justify-center items-center rounded-md 
-           transition-colors text-xl sm:text-2xl 
-           text-[var(--text)] border-none"
-            aria-label="Search"
-          >
-            <IoSearch className="text-xl" />
-          </button>
-        <ThemeSwitch />
         </div>
       </nav>
       <div
