@@ -26,10 +26,10 @@ export default function BlogPostPage({ params }) {
     }
   };
 
-
   useEffect(() => {
     fetchBlogData();
-  }, []);
+  }, [id]);
+
 
   if (loading) {
     return <Loading size="large" />;
