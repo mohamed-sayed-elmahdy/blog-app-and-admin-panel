@@ -58,7 +58,7 @@ export default function BlogPostPage({ params }) {
           <h3 className="text-xl font-semibold mb-1">Step 2: Research and Planning</h3>
           <p>Research the skills and knowledge you need to acquire to achieve your goals.</p>
           <h3 className="text-xl font-semibold mb-1">Step 3: Create a Learning Plan</h3>
-          <p>Based on your research, create a structured learning plan that outlines the topics you need to cover, the resources you'll use, and a timeline for your learning journey.</p>
+          <p>Based on your research, create a structured learning plan that outlines the topics you need to cover, the resources you will use, and a timeline for your learning journey.</p>
           <h3 className="text-xl font-semibold mb-1">Step 4: Find Resources</h3>
           <p>Look for online courses, tutorials, books, and other resources that align with your learning plan. Websites like Coursera, Udemy, and Khan Academy offer a wide range of courses on various topics.</p>
           <h3 className="text-xl font-semibold mb-1">Step 5: Engage in Active Learning</h3>
