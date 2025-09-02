@@ -28,7 +28,7 @@ const titleClass = "text-4xl sm:text-5xl lg:text-6xl font-bold text-[var(--text)
          {secondLineVisible ? (
            <BlurText
              text="Starts Here."
-             delay={300}
+             delay={200}
              animateBy="words"
              direction="top"
              className={titleClass}

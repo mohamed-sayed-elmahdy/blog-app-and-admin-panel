@@ -40,7 +40,7 @@ function PublicNavbar() {
   return (
     <div className="px-2 md:px-4 w-full fixed z-20 transform -translate-x-1/2 left-1/2  top-3 ">
       <nav
-        className=" w-full min-h-12 max-w-[var(--max-width)]  mx-auto flex justify-between items-center  py-[0.4rem] px-6  
+        className=" w-full min-h-12 max-w-[var(--max-width)]  mx-auto flex justify-between items-center  py-[0.4rem] px-4 lg:px-6  
       bg-[var(--bg-blur)] backdrop-blur-[15px] border border-[var(--border-blur)] rounded-full overflow-hidden  
        "
         role="navigation"
@@ -56,17 +56,7 @@ function PublicNavbar() {
         </div>
 
         <div className="flex items-center gap-4 sm:gap-4">
-          {/* Sign In Button */}
-          <ButtonLink
-            href="/signIn"
-            className="hidden md:flex justify-center items-center 
-           gap-2 bg-transparent border-[var(--border-blur)]
-           hover:bg-[var(--btn-bg-hover)] hover:border-[var(--btn-border-hover)] 
-           backdrop-blur-3xl rounded-3xl border 
-           text-[var(--text)] font-semibold py-2 px-6 transition-all duration-300"
-          >
-            Sign In <CiLocationArrow1 className="text-xl" />
-          </ButtonLink>
+     
       
           {/* Search Button */}
           <button
@@ -79,6 +69,18 @@ function PublicNavbar() {
             <IoSearch className="text-xl" />
           </button>
         <ThemeSwitch />
+             {/* Sign In Button */}
+          <ButtonLink
+            href="/signIn"
+            className="hidden md:flex justify-center items-center 
+           gap-2 bg-transparent border-[var(--border-blur)]
+           hover:bg-[var(--btn-bg-hover)] hover:border-[var(--btn-border-hover)] 
+           backdrop-blur-3xl rounded-3xl border 
+           text-[var(--text)] font-semibold py-2 px-6 transition-all duration-300"
+          >
+            Sign In <CiLocationArrow1 className="text-xl" />
+          </ButtonLink>
+
             {/* Menu Button */}
           <button
             type="button"
