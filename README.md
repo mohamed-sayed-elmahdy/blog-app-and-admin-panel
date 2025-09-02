@@ -76,13 +76,15 @@ blog-app-and-admin-panel/
 │   │   │   ├── NavLinks.jsx          # Navigation links component
 │   │   │   ├── PublicFooter.jsx      # Footer for public-facing pages
 │   │   │   ├── PublicHeader.jsx      # Header for public-facing pages
-│   │   │   └── ThemeToggle.jsx       # Theme switcher component
+│   │   │   └── ThemeSwitch.jsx       # Theme switcher component
 │   │   └── ui/        # UI components and design system elements
 │   │       ├── Button.jsx            # Reusable button component
 │   │       ├── ButtonLink.jsx        # Button styled link component
 │   │       ├── Error.jsx             # Error display component
 │   │       ├── Loading.jsx           # Loading/spinner component
 │   │       ├── Toast.jsx             # Toast notification component
+│   │       ├── LightRays.jsx         # Light rays animation component
+│   │       ├── BlurText.jsx          # Blurred text animation component
 │   │       └── ...                   # Additional UI components    
 │   └── lib/           # Utility functions and libraries
 │       ├── models     # Database models for MongoDB  
@@ -129,9 +131,58 @@ blog-app-and-admin-panel/
 - Add search functionality
 - Improve mobile responsiveness
 
-## Challenges Faced & Solutions
-(Describe technical challenges and solutions here)
 
+## Challenges Faced & Solutions
+
+1. **React Version Compatibility**
+
+   * **Challenge:** The project was initially set up with React 19 RC (Release Candidate), which caused compatibility issues with libraries like `framer-motion` and `BlurText` because these libraries aren’t fully optimized for React 19 yet.
+   * **Solution:** Downgraded React and ReactDOM to version 18 to ensure library stability and predictable rendering behavior.
+
+---
+
+2. **Text Animation with `<BlurText />`**
+
+   * **Challenge:** Inserting `<br />` directly inside the `text` prop of `<BlurText />` caused runtime errors (`text.split is not a function`) because the component was designed to process a string, not JSX.
+   * **Solution:** Separated the text into two `<BlurText />` components and controlled their visibility using `useState`.
+
+---
+
+3. **Layout Shifting During Animation (Second Line)**
+
+   * **Challenge:** When animating the second line of the heading, the line appeared suddenly and caused layout shifting because the space wasn’t reserved until the text rendered.
+   * **Solution:** Rendered an invisible placeholder `<h1>` with the same styles to preserve layout space. When the animation triggered, it replaced the placeholder seamlessly, preventing layout shifts.
+
+---
+
+4. **Sequential Animation Triggering**
+
+   * **Challenge:** Needed the second line to animate only after the first line finished animating, but `<BlurText />` didn’t have built-in support for animation sequencing.
+   * **Solution:** Leveraged the `onAnimationComplete` callback of the first `<BlurText />` to update a `secondLineVisible` state. This state conditionally rendered the second `<BlurText />`, creating a smooth sequential animation.
+
+---
+
+5. **UI Mockups vs. Real Data**
+
+   * **Challenge:** The landing page was designed with mock data, making it harder to test responsiveness and interactivity.
+   * **Solution:** Locked in static mockups first to finalize design decisions, with plans to integrate real backend data later.
+
+---
+
+6. **Library Weight Considerations (`ogl`)**
+
+   * **Challenge:** Considering adding 3D/visual effects with `ogl`, but this could negatively impact performance in a dashboard-focused app.
+   * **Solution:** Deferred adding heavy libraries until after the core functionality is stable and performance benchmarks are set.
+
+---
+
+7. **Project Roadmap Clarity**
+
+   * **Challenge:** Unsure whether to complete all frontend UI before backend development or work on both in parallel.
+   * **Solution:** Decided to complete a frontend skeleton (components, layouts, routing) first, then shift focus to backend APIs, followed by integration and refinement.
+
+
+ 
 ## Lessons Learned
 (Share key takeaways from the project)
 

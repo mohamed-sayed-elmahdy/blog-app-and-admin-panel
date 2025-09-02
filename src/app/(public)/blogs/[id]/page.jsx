@@ -28,7 +28,6 @@ export default function BlogPostPage({ params }) {
 
 
   useEffect(() => {
-    console.log("Params:", params, "paramsId:", id, typeof id);
     fetchBlogData();
   }, []);
 

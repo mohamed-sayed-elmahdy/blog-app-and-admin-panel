@@ -56,9 +56,9 @@ function PublicNavbar() {
         </div>
 
         <div className="flex items-center gap-4 sm:gap-4">
-          {/* Sign Up Button */}
+          {/* Sign In Button */}
           <ButtonLink
-            href="/signIp"
+            href="/signIn"
             className="hidden md:flex justify-center items-center 
            gap-2 bg-transparent border-[var(--border-blur)]
            hover:bg-[var(--btn-bg-hover)] hover:border-[var(--btn-border-hover)] 
@@ -114,14 +114,14 @@ function PublicNavbar() {
         </button>
         <NavLinks onClick={toggleMenu} />
         <ButtonLink
-          href="/signup"
+          href="/signIn"
           className="flex md:hidden justify-center items-center 
            gap-2 bg-transparent border-[var(--btn-border)] 
            hover:bg-[var(--btn-bg-hover)] hover:border-[var(--btn-border-hover)] 
            backdrop-blur-3xl rounded-3xl border 
            text-[var(--text)] font-semibold   py-2 px-6 transition-all duration-300"
         >
-          Sign Up <CiLocationArrow1 className="text-xl" />
+          Sign In <CiLocationArrow1 className="text-xl" />
         </ButtonLink>
       </div>
     </div>
