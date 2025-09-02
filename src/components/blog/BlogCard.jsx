@@ -36,7 +36,11 @@ function BlogCard({
             {category}
           </p>
           <span className="text-sm text-[var(--text-lowMuted)] ms-2">
-            {date}
+            {date.toLocaleDateString("en-US", {
+                day: "numeric",
+                month: "short",
+                year: "numeric",
+              })}
           </span>
         </div>
         <div className="py-2 px-2">

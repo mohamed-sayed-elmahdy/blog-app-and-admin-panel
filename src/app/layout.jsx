@@ -1,6 +1,6 @@
 import { Outfit } from "next/font/google";
 import "./globals.css";
-
+import AppProviders  from "@/providers/app-providers";
 
 
 const outfit = Outfit({
@@ -16,9 +16,9 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" suppressHydrationWarning="true">
-      <body className={`${outfit.className} antialiased`}>
-        {children}
+    <html lang="en"  suppressHydrationWarning>
+      <body className={`${outfit.className} antialiased suppressHydrationWarning`}>
+        <AppProviders>{children}</AppProviders>
       </body>
     </html>
   );

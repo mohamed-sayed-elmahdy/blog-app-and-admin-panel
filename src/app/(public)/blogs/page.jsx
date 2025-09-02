@@ -75,11 +75,7 @@ export default function BlogsPage() {
               key={blog.id}
               id={blog.id}
               title={blog.title}
-              date={blog.date.toLocaleDateString("en-US", {
-                day: "numeric",
-                month: "short",
-                year: "numeric",
-              })}
+              date={blog.date}
               description={blog.description}
               category={blog.category}
               image={blog.image}

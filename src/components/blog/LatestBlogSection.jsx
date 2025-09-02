@@ -22,7 +22,7 @@ function LatestBlogSection() {
   };
 
   return (
-    <div className=" max-w-[1480px] sm:max-w-[1480px] mx-auto mt-20 mb-36 md:mb-52  px-2">
+    <div className=" max-w-[1480px] sm:max-w-[1480px] mx-auto mt-20 mb-36 md:mb-32  px-2">
       <h2 className="text-5xl font-bold text-center text-[var(--text)] mb-10">
         Latest Blogs
       </h2>
@@ -37,11 +37,7 @@ function LatestBlogSection() {
               key={blog.id}
               id={blog.id}
               title={blog.title}
-               date={blog.date.toLocaleDateString("en-US", {
-                day: "numeric",
-                month: "short",
-                year: "numeric",
-              })}
+               date={blog.date}
               description={blog.description}
               category={blog.category}
               image={blog.image}

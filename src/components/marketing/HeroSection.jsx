@@ -1,17 +1,45 @@
+"use client"
+import { useState } from "react";
 import ButtonLink from "@/components/ui/ButtonLink";
+import BlurText from '@/components/ui/BlurText';
+
 
 export default function HeroSection() {
+  const [secondLineVisible, setSecondLineVisible] = useState(false);
+const titleClass = "text-4xl sm:text-5xl lg:text-6xl font-bold text-[var(--text)] leading-tight";
+
   return (
     <div className="relative overflow-hidden z-10 w-full">
       <div className="relative px-4 py-20 max-w-[var(--max-width)] mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="space-y-6 md:space-y-8">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[var(--text)] leading-tight">
-              Predictable growth
-              <br />
-              starts here.
-            </h1>
+            <div>
+              <div className="text-center">
+                <BlurText
+                  text="Predictable Growth"
+                  delay={300}
+                  animateBy="words"
+                  direction="top"
+                  className={titleClass}
+                  onAnimationComplete={() => { setSecondLineVisible(true) }}
+                />
+
+         {secondLineVisible ? (
+           <BlurText
+             text="Starts Here."
+             delay={300}
+             animateBy="words"
+             direction="top"
+             className={titleClass}
+           />
+         ) : <h1 className={`${titleClass} invisible`}>Starts Here.</h1>}
+
+              </div>
+
+            </div>
+
+
 
             <p className="text-base md:text-lg text-[var(--text-muted)] max-w-lg leading-relaxed">
               Clearbit gives you full context on every person and company in
@@ -20,7 +48,7 @@ export default function HeroSection() {
             </p>
             <ButtonLink
               href={"#"}
-              className="block w-fit bg-[var(--bg-blur)] hover:bg-[var(--bg-black)] border-[var(--border-blur)] hover:border-[var(--btn-border-hover)] backdrop-blur-3xl border text-[var(--text)] px-8 py-3  shadow-md shadow-white/10 rounded-lg font-semibold transition-all duration-300"
+              className="block w-fit bg-[var(--bg-blur)] hover:bg-[var(--btn-bg-hover)] border-[var(--border-blur)] hover:border-[var(--btn-border-hover)] backdrop-blur-3xl border text-[var(--text)] px-8 py-3  shadow-md shadow-white/10 rounded-lg font-semibold transition-all duration-300"
             >
               Get Started
             </ButtonLink>
@@ -28,7 +56,7 @@ export default function HeroSection() {
 
           {/* Right Dashboard Mockup */}
           <div>
-            <div className="bg-[var(--bg-blur)] border-[1.89px] border-[var(--border-blur)] backdrop-blur-[25px] rounded-3xl p-6  shadow-md shadow-white/10 max-w-[550px] sm:mx-auto lg:ms-auto lg:me-[initial] transform rotate-2 hover:rotate-0 transition-all duration-300">
+            <div className="bg-[var(--bg-blur)] dark:border-[1.69px] border-[1px] border-[var(--border-blur)] backdrop-blur-[25px] rounded-3xl p-6  shadow-md shadow-white/10 max-w-[550px] sm:mx-auto lg:ms-auto lg:me-[initial] transform rotate-2 hover:rotate-0 transition-all duration-300">
               {/* Header */}
               <div className="relative z-10 flex items-center justify-between mb-6">
                 <div className="flex items-center space-x-2">

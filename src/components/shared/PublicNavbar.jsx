@@ -7,6 +7,7 @@ import { HiOutlineMenu } from "react-icons/hi";
 import { IoIosCloseCircle } from "react-icons/io";
 import ButtonLink from "@/components/ui/ButtonLink";
 import NavLinks from "@/components/shared/NavLinks";
+import ThemeSwitch from "@/components/shared/ThemeSwitch";
 
 function PublicNavbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -59,7 +60,7 @@ function PublicNavbar() {
           <ButtonLink
             href="/signIp"
             className="hidden md:flex justify-center items-center 
-           gap-2 bg-transparent border-[var(--btn-border)] 
+           gap-2 bg-transparent border-[var(--border-blur)]
            hover:bg-[var(--btn-bg-hover)] hover:border-[var(--btn-border-hover)] 
            backdrop-blur-3xl rounded-3xl border 
            text-[var(--text)] font-semibold py-2 px-6 transition-all duration-300"
@@ -91,14 +92,14 @@ function PublicNavbar() {
           >
             <IoSearch className="text-xl" />
           </button>
+        <ThemeSwitch />
         </div>
       </nav>
       <div
-        className={`relative flex flex-col gap-6 md:hidden bg-[var(--bg-blur)] backdrop-blur-[15px] text-[var(--text)] border border-[var(--border-blur)] rounded-2xl p-4 items-center justify-center overflow-hidden transition-all duration-500 ease-in-out  ${
-          menuOpen
+        className={`relative flex flex-col gap-6 md:hidden bg-[var(--bg-blur)] backdrop-blur-[15px] text-[var(--text)] border border-[var(--border-blur)] rounded-2xl p-4 items-center justify-center overflow-hidden transition-all duration-500 ease-in-out  ${menuOpen
             ? "max-h-[500px] opacity-100 mt-4"
             : "max-h-0 p-0 opacity-0 border-0 mt-0"
-        }`}
+          }`}
         ref={menuRef}
         role="menu"
         id="mobile-menu"

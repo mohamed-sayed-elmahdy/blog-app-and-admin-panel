@@ -3,17 +3,20 @@
 @tailwind utilities;
 
 :root {
-  /* Dark Mode (Default) */
+  /* 🌙 Dark Mode (Default) */
+  --white: rgba(255, 255, 255);
+  --black: rgba(0, 0, 0);
   --bg-blur: rgba(0, 0, 0, 0.05);
   --border-blur: rgba(255, 255, 255, 0.25);
   --text: white;
   --secondary-text-color: rgba(0, 0, 0);
   --text-hover: #ababab;
   --text-active: #ababab;
-  --text-muted: #9ca3af;
+  --text-muted: #8d8d8d;
   --text-lowMuted: #d0d0d0;
   --btn-border: rgba(255, 255, 255, 0.2);
   --btn-border-hover: rgba(255, 255, 255, 0.3);
+  --btn-bg-hover: rgba(255, 255, 255, 0.04);
   --bg-green: #16a34a;
   --text-green: #4ade80;
   --bg-card: rgba(255, 255, 255, 0.05);
@@ -23,21 +26,39 @@
   --bg-white: rgba(255, 255, 255);
   --bg-black: rgba(0, 0, 0);
   --white-border: rgba(255, 255, 255);
+  --text-gray-400: #9ca3af;
   --max-width: 1480px;
+
+
+  /* Gradient (Dark Mode) */
+  --bg-gradient-top-left: linear-gradient(to top left,
+    #000000, #000000, #000000, #000000, #000000, #060606, #0c0b0b, #111010, #191818, #211f1f, #2a2626, #322e2e);
+  --bg-gradient-bottom-left: linear-gradient(to bottom left,
+ #000000, #000000, #000000, #000000, #000000, #060606, #0c0b0b, #111010, #191818, #211f1f, #2a2626, #322e2e);
+  --bg-gradient-top-right: linear-gradient(to top right,
+ #000000, #000000, #000000,  #000000, #000000,  #060606, #0c0b0b, #111010, #191818, #211f1f, #2a2626, #322e2e);
+  --bg-gradient-bottom-right: linear-gradient(to bottom right,
+ #000000, #000000, #000000,  #000000, #000000, #060606, #0c0b0b, #111010, #191818, #211f1f, #2a2626, #322e2e);
+
+  /*  Stars Color (Dark Mode)*/
+  --star-color: rgba(255, 255, 255, 0.6);
 }
 
-[data-theme="light"] {
+.light {
   /* ☀️ Light Mode */
+  --white: rgba(0, 0, 0);
+  --black: rgba(255, 255, 255);
   --bg-blur: rgba(255, 255, 255, 0.05);
   --border-blur: rgba(0, 0, 0, 0.25);
   --text: black;
   --secondary-text-color: rgba(255, 255, 255);
-  --text-hover: #5d5d5d;
-  --text-active: #5d5d5d;
-  --text-muted: #9ca3af;
-  --text-lowMuted: #d0d0d0;
+  --text-hover: #6a6a6a;
+  --text-active: #6a6a6a;
+  --text-muted: #6a6a6a;
+  --text-lowMuted: #6a6a6a;
   --btn-border: rgba(0, 0, 0, 0.2);
   --btn-border-hover: rgba(0, 0, 0, 0.3);
+  --btn-bg-hover: rgba(0, 0, 0, 0.04);
   --bg-green: #16a34a;
   --text-green: #4ade80;
   --bg-card: rgba(255, 255, 255, 0.05);
@@ -47,4 +68,67 @@
   --bg-white: rgba(0, 0, 0);
   --bg-black: rgba(255, 255, 255);
   --white-border: rgba(0, 0, 0);
+  --text-gray-400: #4b5563;
+  --accent-color: #00ffff;
+  /*  Light Mode Gradients */
+  --bg-gradient-top-left: linear-gradient(to top left,
+    #ffffff,  #ffffff, #f9f9f9, #f3f3f3, #ebebeb, #ebebeb,  #e4e4e4, #d7d7d7);
+  --bg-gradient-bottom-left: linear-gradient(to bottom left,
+    #ffffff,  #ffffff, #f9f9f9, #f3f3f3, #ebebeb, #ebebeb,  #e4e4e4, #d7d7d7);
+  --bg-gradient-top-right: linear-gradient(to top right,
+       #ffffff,  #ffffff, #f9f9f9, #f3f3f3, #ebebeb, #ebebeb,   #e4e4e4, #d7d7d7);
+  --bg-gradient-bottom-right: linear-gradient(to bottom right,
+      #ffffff,  #ffffff, #f9f9f9, #f3f3f3, #ebebeb, #ebebeb,   #e4e4e4, #d7d7d7);
+
+  /*  Light Mode Stars */
+  --star-color: rgba(0, 0, 0, 0.5); 
 }
+
+
+html {
+  color-scheme: light dark;
+}
+html.light {
+  color-scheme: light;
+}
+html.dark {
+  color-scheme: dark;
+}
+
+
+html.theme-switching *,
+html.theme-switching *::before,
+html.theme-switching *::after {
+  transition: none !important;
+}
+
+/* Gradient backgrounds */
+.bg-gradient-top-left {
+  background: var(--bg-gradient-top-left);
+  background-size: cover;
+  background-position: center;
+}
+.bg-gradient-bottom-left {
+  background: var(--bg-gradient-bottom-left);
+  background-size: cover;
+  background-position: center;
+}
+.bg-gradient-top-right {
+  background: var(--bg-gradient-top-right);
+  background-size: cover;
+  background-position: center;
+}
+.bg-gradient-bottom-right {
+  background: var(--bg-gradient-bottom-right);
+  background-size: cover;
+  background-position: center;
+}
+
+
+.star {
+  background-color: var(--star-color);
+  border-radius: 50%;
+}
+
+
+

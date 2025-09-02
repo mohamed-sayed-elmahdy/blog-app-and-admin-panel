@@ -6,8 +6,8 @@ const Loading = ({ size = 'medium' }) => {
   }
 
   return (
-    <div className="flex items-center justify-center">
-      <div className={`${sizeClasses[size]} animate-spin rounded-full border-4 border-gray-200 border-t-blue-600`}>
+    <div className="flex items-center justify-center h-screen">
+      <div className={`${sizeClasses[size]} animate-spin rounded-full border-4 border-gray-200 border-t-black`}>
         <span className="sr-only">Loading...</span>
       </div>
     </div>
