@@ -1,5 +1,5 @@
 "use client";
-import { use, useState, useEffect } from "react";
+import { use, useState } from "react";
 import Image from "next/image";
 import Loading from "@/components/ui/Loading";
 import Error from "@/components/ui/Error";
