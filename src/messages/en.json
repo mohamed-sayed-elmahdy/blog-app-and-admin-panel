@@ -1,0 +1,59 @@
+{
+  "lang": "en",
+  "home": {
+    "siteTitle": "StoryCraft",
+    "hero-description": "Unlock the full story of any person or company on your market to gain access to more customers and convert them with more confidence."
+},
+  "metadata": {
+    "title": "StoryCraft",
+    "description": "Effortlessly create, customize, and manage your blogs with our advanced Blog App and Admin Panel.",
+    "keywords": [
+      "blog",
+      "admin panel",
+      "next.js",
+      "react",
+      "tailwindcss",
+      "dashboard",
+      "content management",
+      "seo",
+      "responsive design"
+    ],
+    "authors": [
+      {
+        "name": "Your Name",
+        "url": "https://yourwebsite.com"
+      }
+    ],
+    "openGraph": {
+      "title": "StoryCraft",
+      "description": "Effortlessly create, customize, and manage your blogs with our advanced Blog App and Admin Panel.",
+      "url": "https://yourwebsite.com",
+      "siteName": "StoryCraft",
+      "images": [
+        {
+          "url": "https://yourwebsite.com/og-image.jpg",
+          "width": 1200,
+          "height": 630,
+          "alt": "StoryCraft"
+        }
+      ],
+      "locale": "",
+      "type": "website"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "StoryCraft",
+      "description": "Effortlessly create, customize, and manage your blogs with our advanced Blog App and Admin Panel.",
+      "images": [
+        "https://yourwebsite.com/twitter-image.jpg"
+      ]
+    },
+    "icons": {
+      "icon": "/favicon.ico",
+      "shortcut": "/favicon-16x16.png",
+      "apple": "/apple-touch-icon.png"
+    }
+  }
+  
+}
+  

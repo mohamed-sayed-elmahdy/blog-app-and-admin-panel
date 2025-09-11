@@ -1,0 +1,59 @@
+{
+    "lang": "ar",
+    "home": {
+        "siteTitle": "مدونتي",
+        "hero-description": "تمنحك كليربيت السياق الكامل حول كل شخص وشركة في سوقك المستهدف حتى تتمكن من الوصول إلى المزيد من العملاء وتحويلهم بشكل أكثر توقعًا."
+    },
+       "metadata": {
+        "title": "ستورى كرافت",
+        "description": "أنشئ وأدر مدونتك بسهولة مع تطبيق المدونات ولوحة التحكم المتقدمة الخاصة بنا.",
+        "keywords": [
+            "blog",
+            "admin panel",
+            "next.js",
+            "react",
+            "tailwindcss",
+            "dashboard",
+            "content management",
+            "seo",
+            "responsive design"
+        ],
+        "authors": [
+            {
+                "name": "Your Name",
+                "url": "https://yourwebsite.com"
+            }
+        ],
+        "openGraph": {
+            "title": "ستورى كرافت",
+            "description": "أنشئ وأدر مدونتك بسهولة مع تطبيق المدونات ولوحة التحكم المتقدمة الخاصة بنا.",
+            "url": "https://yourwebsite.com",
+            "siteName": "StoryCraft",
+            "images": [
+                {
+                    "url": "https://yourwebsite.com/og-image.jpg",
+                    "width": 1200,
+                    "height": 630,
+                    "alt": "StoryCraft"
+                }
+            ],
+            "locale": "",
+            "type": "website"
+        },
+        "twitter": {
+            "card": "summary_large_image",
+            "title": "ستورى كرافت",
+            "description": "أنشئ وأدر مدونتك بسهولة مع تطبيق المدونات ولوحة التحكم المتقدمة الخاصة بنا.",
+            "images": [
+                "https://yourwebsite.com/twitter-image.jpg"
+            ]
+        },
+        "icons": {
+            "icon": "/favicon.ico",
+            "shortcut": "/favicon-16x16.png",
+            "apple": "/apple-touch-icon.png"
+        }
+    }
+    
+ 
+}

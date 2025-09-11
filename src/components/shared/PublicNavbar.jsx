@@ -8,6 +8,8 @@ import { IoIosCloseCircle } from "react-icons/io";
 import ButtonLink from "@/components/ui/ButtonLink";
 import NavLinks from "@/components/shared/NavLinks";
 import ThemeSwitch from "@/components/shared/ThemeSwitch";
+import ToggleLocal from "@/components/ui/ToggleLocal";
+
 
 function PublicNavbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -56,8 +58,6 @@ function PublicNavbar() {
         </div>
 
         <div className="flex items-center gap-4 sm:gap-4">
-     
-      
           {/* Search Button */}
           <button
             type="button"
@@ -68,8 +68,11 @@ function PublicNavbar() {
           >
             <IoSearch className="text-xl" />
           </button>
-        <ThemeSwitch />
-             {/* Sign In Button */}
+            <ThemeSwitch />
+        
+          <ToggleLocal />
+        
+          {/* Sign In Button */}
           <ButtonLink
             href="/signIn"
             className="hidden md:flex justify-center items-center 
@@ -80,8 +83,7 @@ function PublicNavbar() {
           >
             Sign In <CiLocationArrow1 className="text-xl" />
           </ButtonLink>
-
-            {/* Menu Button */}
+          {/* Menu Button */}
           <button
             type="button"
             className="flex md:hidden justify-center items-center rounded-md
@@ -100,8 +102,8 @@ function PublicNavbar() {
       </nav>
       <div
         className={`relative flex flex-col gap-6 md:hidden bg-[var(--bg-blur)] backdrop-blur-[15px] text-[var(--text)] border border-[var(--border-blur)] rounded-2xl p-4 items-center justify-center overflow-hidden transition-all duration-500 ease-in-out  ${menuOpen
-            ? "max-h-[500px] opacity-100 mt-4"
-            : "max-h-0 p-0 opacity-0 border-0 mt-0"
+          ? "max-h-[500px] opacity-100 mt-4"
+          : "max-h-0 p-0 opacity-0 border-0 mt-0"
           }`}
         ref={menuRef}
         role="menu"

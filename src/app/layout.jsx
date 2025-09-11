@@ -1,6 +1,8 @@
 import { Outfit } from "next/font/google";
 import "./globals.css";
 import AppProviders  from "@/providers/app-providers";
+import { NextIntlClientProvider } from 'next-intl';
+import { getLocale, getMessages } from "next-intl/server";
 
 
 const outfit = Outfit({
@@ -8,17 +10,38 @@ const outfit = Outfit({
   weight: ["400", "500", "600", "700"],
   display: "swap",
 });
-export const metadata = {
-  title: "StoryCraft",
-  description:
-    "Effortlessly create, customize, and manage your blogs with our advanced Blog App and Admin Panel. Designed for speed, flexibility, and user-friendly control to help you grow your online presence.",
-};
 
-export default function RootLayout({ children }) {
+export async function generateMetadata() {
+  const locale = await getLocale();
+  const messages = await getMessages(locale);
+
+  return {
+    title: messages['metadata'].title,
+    description: messages['metadata'].description,
+    keywords: ['blog', 'admin panel', 'next.js', 'react', 'tailwindcss', 'dashboard', 'content management', 'seo', 'responsive design'],
+    authors: [{ name: 'Mohamed Sayed ELmahdy', url: 'https://.com' }],
+    openGraph: {
+
+    },
+    twitter: {
+ 
+    },
+    icons: {
+
+    },
+  };
+}
+
+export default async function RootLayout({ children }) {
+  const locale = await getLocale();
+  const messages = await getMessages(locale);
+
   return (
-    <html lang="en"  suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning>
       <body className={`${outfit.className} antialiased suppressHydrationWarning`}>
-        <AppProviders>{children}</AppProviders>
+        <NextIntlClientProvider messages={messages}>
+          <AppProviders>{children}</AppProviders>
+        </NextIntlClientProvider>
       </body>
     </html>
   );

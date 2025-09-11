@@ -8,12 +8,12 @@ export default function PublicLayout({ children }) {
   const { resolvedTheme, setTheme } = useTheme();
 
   return (
-    <div className="min-h-screen relative">
+    <div className="min-h-screen relative ">
       {/* 🌌 Background Grids */}
-      <div className="bg-gradient-top-left fixed top-0 left-0 w-[51.5%] h-[51vh] z-[-1] outline-0 border-none" />
-      <div className="bg-gradient-bottom-left fixed top-1/2 left-0 w-[51.5%] h-[50vh] z-[-1] outline-0 border-none" />
-      <div className="bg-gradient-top-right fixed top-0 left-1/2 w-[51.5%] h-[51vh] z-[-1] outline-0 border-none" />
-      <div className="bg-gradient-bottom-right fixed top-1/2 left-1/2 w-[51.5%] h-[50vh] z-[-1] outline-0 border-none" />
+      <div className="hidden dark:block bg-gradient-top-left fixed top-0 left-0 w-[51.5%] h-[51vh] z-[-1] outline-0 border-none " />
+      <div className="hidden dark:block bg-gradient-bottom-left fixed top-1/2 left-0 w-[51.5%] h-[50vh] z-[-1] outline-0 border-none" />
+      <div className="hidden dark:block bg-gradient-top-right fixed top-0 left-1/2 w-[51.5%] h-[51vh] z-[-1] outline-0 border-none" />
+      <div className="hidden dark:block bg-gradient-bottom-right fixed top-1/2 left-1/2 w-[51.5%] h-[50vh] z-[-1] outline-0 border-none" />
 
       {/* ✨ Decorative Stars */}
       <div className="fixed inset-8">
@@ -46,19 +46,19 @@ export default function PublicLayout({ children }) {
         <div className="star bottom-[95%] left-[75%]" />
       </div>
       <div className="w-full h-[100vh] fixed" >
-  <LightRays
-    raysOrigin="top-center"
-    raysColor={resolvedTheme === 'dark' ? '#fff' : '#00ffff'}
-    raysSpeed={1.5}
-    lightSpread={0.8}
-    rayLength={1.2}
-    followMouse={true}
-    mouseInfluence={0.1}
-    noiseAmount={0.1}
-    distortion={0.05}
-    className="custom-rays"
-  />
-</div>
+        <LightRays
+          raysOrigin="top-center"
+          raysColor={resolvedTheme === 'dark' ? '#fff' : '#00ffff'}
+          raysSpeed={1.5}
+          lightSpread={0.8}
+          rayLength={1.2}
+          followMouse={true}
+          mouseInfluence={0.1}
+          noiseAmount={0.1}
+          distortion={0.05}
+          className=" hidden dark:block  "
+        />
+      </div>
 
       <PublicNavbar />
       <main className="pt-12 relative z-10">{children}</main>

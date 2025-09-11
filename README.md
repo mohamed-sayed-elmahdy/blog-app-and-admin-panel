@@ -24,6 +24,10 @@ blog-app-and-admin-panel/
 │   │   │   └── dashboard/  # Admin dashboard section
 │   │   │       ├── layout.jsx  # Dashboard layout component
 │   │   │       └── page.jsx    # Dashboard main page
+│   │   ├── (user)/       # User routes and pages (grouped route)
+│   │   │   ├── dashboard/   # User dashboard section
+│   │   │   │   ├── layout.jsx  # Dashboard layout component
+│   │   │   │   └── page.jsx    # Dashboard main page
 │   │   ├── (public)/  # Public routes and pages (grouped route)
 │   │   │   ├── (marketing)/  # Marketing-related pages
 │   │   │   │   ├── about/    # About page section
@@ -50,12 +54,24 @@ blog-app-and-admin-panel/
 │   │   │   ├── interviewsQ/
 │   │   │   └── test/
 │   │   │       └── route.js
+│   │   ├── auth/    # Authentication routes and pages
+│   │   │   ├── login/
+│   │   │   │   └── page.jsx
+│   │   │   ├── logout/
+│   │   │   │   └── page.jsx
+│   │   │   ├── signup/
+│   │   │   │   └── page.jsx
+│   │   │   └── verify/
+│   │   │       └── page.jsx
 │   │   ├── favicon.ico # Site favicon displayed in browser tabs
 │   │   ├── globals.css # Global CSS styles for the entire application
 │   │   └── layout.jsx # Root layout component wrapping all pages
 │   ├── assets/        # Application assets for internal use
 │   │   └── ...        # Various icons, images, and UI elements
-│   ├── Providers/     # React context providers
+│   ├── messages/      # Internationalization (i18n) messages
+│   │   ├── ar.json    # Arabic messages
+│   │   ├── en.json    # English messages
+│   ├── providers/     # React context providers
 │   │   ├── app-providers.jsx          # Application context provider for all Providers
 │   │   ├── auth-provider.jsx          # Authentication context provider
 │   │   ├── toast-provider.jsx         # Toast context provider
@@ -85,7 +101,9 @@ blog-app-and-admin-panel/
 │   │       ├── Toast.jsx             # Toast notification component
 │   │       ├── LightRays.jsx         # Light rays animation component
 │   │       ├── BlurText.jsx          # Blurred text animation component
-│   │       └── ...                   # Additional UI components    
+│   │       └── ...                   # Additional UI components   
+│   ├── i18n/         # Internationalization (i18n) configuration and messages  
+│   │   └── requests.js    # API requests for i18n messages   
 │   └── lib/           # Utility functions and libraries
 │       ├── models     # Database models for MongoDB  
 │       └── config/     # Configuration helpers
@@ -194,3 +212,7 @@ blog-app-and-admin-panel/
 
 ## License
 (Specify your project license here)
+
+
+
+

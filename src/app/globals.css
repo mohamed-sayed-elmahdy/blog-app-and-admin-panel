@@ -86,7 +86,8 @@
 
 
 html {
-  color-scheme: light dark;
+  color-scheme: light dark ;
+  scroll-behavior: smooth;
 }
 html.light {
   color-scheme: light;
@@ -100,6 +101,12 @@ html.theme-switching *,
 html.theme-switching *::before,
 html.theme-switching *::after {
   transition: none !important;
+}
+html[lang="ar"] {
+  direction: rtl;
+}
+html[lang="en"] {
+  direction: ltr; 
 }
 
 /* Gradient backgrounds */

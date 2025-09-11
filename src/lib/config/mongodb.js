@@ -35,20 +35,21 @@
 
 // export {  connectDB };                              
 
-1- console.log(isNaN(123));
-2- console.log(isNaN(true));
-3- console.log(isNaN(undefined));
-4- console.log(isNaN(null)); 
-5- console.log(isNaN(" "));
-6- console.log(isNaN("123"));
-7- console.log(isNaN("Hello"));
-8- console.log(isNaN([]));
-9- console.log(isNaN([123]));
-10- console.log(isNaN([1,2]));
-11- console.log(isNaN({}));
-12- console.log(NaN == NaN);
-13- console.log(NaN === NaN);
-
-
-
+// 1- console.log(isNaN(123));
+// 2- console.log(isNaN(true));
+// 3- console.log(isNaN(false));
+// 4- console.log(isNaN(undefined));
+// 5- console.log(isNaN(null)); 
+// 6- console.log(isNaN(" "));
+// 7- console.log(isNaN("123"));
+// 8- console.log(isNaN("Hello"));
+// 9- console.log(isNaN([]));
+// 10- console.log(isNaN([123]));
+// 11- console.log(isNaN([1,2]));
+// 12- console.log(isNaN({}));
+// 13- console.log(isNaN(Infinity));
+// 14- console.log(isNaN(-Infinity));
+// 15- console.log(isNaN(function(){}));
+// 16- console.log(NaN == NaN);
+// 17- console.log(NaN === NaN);
 

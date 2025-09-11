@@ -2,11 +2,13 @@
 import { useState } from "react";
 import ButtonLink from "@/components/ui/ButtonLink";
 import BlurText from '@/components/ui/BlurText';
-
+import { useTranslations } from 'next-intl';
 
 export default function HeroSection() {
   const [secondLineVisible, setSecondLineVisible] = useState(false);
-const titleClass = "text-4xl sm:text-5xl lg:text-6xl font-bold text-[var(--text)] leading-tight";
+  const t = useTranslations("home");
+
+  const titleClass = "text-4xl sm:text-5xl lg:text-6xl font-bold text-[var(--text)] leading-tight";
 
   return (
     <div className="relative overflow-hidden z-10 w-full">
@@ -28,7 +30,7 @@ const titleClass = "text-4xl sm:text-5xl lg:text-6xl font-bold text-[var(--text)
          {secondLineVisible ? (
            <BlurText
              text="Starts Here."
-             delay={200}
+             delay={100}
              animateBy="words"
              direction="top"
              className={titleClass}
@@ -42,9 +44,7 @@ const titleClass = "text-4xl sm:text-5xl lg:text-6xl font-bold text-[var(--text)
 
 
             <p className="text-base md:text-lg text-[var(--text-muted)] max-w-lg leading-relaxed">
-              Clearbit gives you full context on every person and company in
-              your target market so you can reach and convert more customers,
-              more predictably.
+              {t("hero-description")}
             </p>
             <ButtonLink
               href={"#"}
