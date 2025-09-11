@@ -19,7 +19,7 @@ export async function generateMetadata() {
     title: messages['metadata'].title,
     description: messages['metadata'].description,
     keywords: ['blog', 'admin panel', 'next.js', 'react', 'tailwindcss', 'dashboard', 'content management', 'seo', 'responsive design'],
-    authors: [{ name: 'Mohamed Sayed ELmahdy', url: 'https://.com' }],
+    authors: [{ name: 'Mohamed Sayed ELmahdy', url: 'https://blog-app-and-admin-panel-ie8pxky94.vercel.app' }],
     openGraph: {
 
     },
