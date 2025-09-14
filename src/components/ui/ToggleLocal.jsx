@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-
+import { LOCALE_COOKIE_NAME } from "@/i18n/config";
 export default function ToggleLocal() {
     const [locale, setLocale] = useState(false); // false -> EN, true -> AR
     const router = useRouter();
@@ -10,28 +10,30 @@ export default function ToggleLocal() {
     useEffect(() => {
         const cookieLocale = document.cookie
             .split('; ')
-            .find(row => row.startsWith('VFront_locale='))
+            .find(row => row.startsWith(`${LOCALE_COOKIE_NAME}=`))
             ?.split('=')[1];
 
         if (cookieLocale) {
             setLocale(cookieLocale === 'ar');
         }
-        else {
-            setLocale(false); // default to English if no cookie is found
-        }
-
     }, []);
 
     // when locale state changes, update the cookie and reload the page
-    useEffect(() => {
-        document.cookie = `VFront_locale=${locale ? 'ar' : 'en'}; path=/; max-age=31536000; SameSite=lax`; // 1 year
-        router.refresh(); // refresh the page to apply the new locale
-    }, [locale, router]);
-
-
     const toggleText = (e) => {
-        setLocale(e.target.checked);
+    setLocale(e.target.checked); 
+    const newLocale = e.target.checked ? 'ar' : 'en';
+    const currentCookie = document.cookie
+        .split('; ')
+        .find(row => row.startsWith(`${LOCALE_COOKIE_NAME}=`))
+        ?.split('=')[1] || 'en';
+
+    if (newLocale !== currentCookie) {
+        const secure = location.protocol === 'https:' ? '; Secure' : '';
+        document.cookie = `${LOCALE_COOKIE_NAME}=${newLocale}; path=/; max-age=31536000; SameSite=Lax${secure}`;
+        router.refresh();
     }
+    };
+
 
     return (
         <div className="flex items-center">
@@ -39,7 +41,7 @@ export default function ToggleLocal() {
                 <input
                     id="toggleCheckBox"
                     type="checkbox"
-                    className="sr-only"
+                    className="sr-only "
                     checked={locale}
                     onChange={toggleText}
                     aria-checked={locale}
@@ -48,7 +50,7 @@ export default function ToggleLocal() {
 
                 <div className="w-[3.45rem] h-7 bg-transparent border border-[var(--border-blur)] 
                 rounded-full relative flex items-center px-1 transition-colors duration-200
-                dark:border-gray-600 peer-checked:bg-[var(--btn-bg-hover)]">
+                dark:border-gray-600">
                     {/* labels */}
                     <div className="absolute inset-0 flex items-center justify-between
                      px-2 text-xs font-medium text-[var(--text)] 

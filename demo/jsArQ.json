@@ -1,0 +1,38 @@
+
+[
+  {
+    "id": 1,
+    "question": "ما الذي سيُطبع ولماذا؟\n\nfor (var i = 0; i < 3; i++) {\n  setTimeout(() => console.log(i), 0);\n}",
+    "codeSnippet": "for (var i = 0; i < 3; i++) {\n  setTimeout(() => console.log(i), 0);\n}",
+    "hints": [
+      "فكّر في نطاق var: هل هو بلوك أم دالة؟",
+      "متى تُنفّذ دوال setTimeout مقارنةً بانتهاء الحلقة؟"
+    ],
+    "sampleAnswer": "سيطبع الرقم 3 ثلاث مرات لأن var ذو نطاق دالة واحد؛ عندما تُنفّذ ردود النداء تكون قيمة i بالفعل 3.",
+    "expectedOutput": "3\n3\n3\n",
+    "runInstructions": "الصق الشيفرة في console المتصفح أو احفظ الملف ثم شغّل: node file.js",
+    "stepByStep": [
+      "تنفّذ الحلقة تزامنياً وتزيد i حتى تصبح 3.",
+      "تُجدول ردود النداء عبر setTimeout وتُنفّذ بعد انتهاء الstack الحالي.",
+      "كل الردود تقرأ نفس المتغيّر المشترك i الذي قيمته 3."
+    ],
+    "followUpSuggestions": [
+      "حل المشكلة باستبدال var بـ let",
+      "التقاط قيمة i الحالية باستخدام IIFE"
+    ],
+    "tags": ["نطاق", "إغلاق", "غير متزامن"],
+    "difficulty": "سهل",
+    "timeEstimate": "2د",
+    "interactive": true,
+    "editableCode": true,
+    "tests": [
+      {
+        "type": "stdout",
+        "match": "^3\\s*3\\s*3\\s*$",
+        "description": "ثلاث سطور تحتوي الرقم 3"
+      }
+    ],
+    "points": 5
+  }
+
+]
