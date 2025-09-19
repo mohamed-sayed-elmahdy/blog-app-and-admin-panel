@@ -10,7 +10,7 @@ import {
 const supported = SUPPORTED_LOCALES;
 const defaultLocale = DEFAULT_LOCALE;
 
-export default getRequestConfig(async ({  }) => {
+export default getRequestConfig(async ({}) => {
 
   const store = await cookies();
   const localeFromCookie = store.get(LOCALE_COOKIE_NAME)?.value || defaultLocale;

@@ -20,14 +20,15 @@ A full-stack blog application built with Next.js featuring a public-facing blog 
 blog-app-and-admin-panel/
 ├── src/               # Source code directory
 │   ├── app/           # Next.js app router (new Next.js 13+ structure)
-│   │   ├── (admin)/   # Admin routes and pages (grouped route)
-│   │   │   └── dashboard/  # Admin dashboard section
-│   │   │       ├── layout.jsx  # Dashboard layout component
-│   │   │       └── page.jsx    # Dashboard main page
-│   │   ├── (user)/       # User routes and pages (grouped route)
-│   │   │   ├── dashboard/   # User dashboard section
-│   │   │   │   ├── layout.jsx  # Dashboard layout component
-│   │   │   │   └── page.jsx    # Dashboard main page
+│   │   ├── admin/   # Admin routes and pages (grouped route)
+│   │   │   └── dashboard/  # Admin dashboard section   
+│   │   │       ├── layout.jsx   # Admin dashboard layout component
+│   │   │       ├── page.jsx     # Admin dashboard main page
+│   │   │       └── .....        # Other admin dashboard pages
+│   │   ├── dashboard/       # User routes and pages (grouped route)
+│   │   │   ├── layout.jsx   # Dashboard layout component
+│   │   │   ├── page.jsx     # Dashboard main page
+│   │   │   └── .....        # Other dashboard pages
 │   │   ├── (public)/  # Public routes and pages (grouped route)
 │   │   │   ├── (marketing)/  # Marketing-related pages
 │   │   │   │   ├── about/    # About page section
@@ -51,7 +52,7 @@ blog-app-and-admin-panel/
 │   │   │   │   ├── route.js
 │   │   │   │   └── [id]/
 │   │   │   │       └── route.js
-│   │   │   ├── interviewsQ/
+│   │   │   ├── interviews/
 │   │   │   └── test/
 │   │   │       └── route.js
 │   │   ├── auth/    # Authentication routes and pages
@@ -78,12 +79,12 @@ blog-app-and-admin-panel/
 │   │   └── theme-provider.jsx         # Theme context provider 
 │   ├── components/    # Reusable React components
 │   │   ├── admin/     # Admin panel specific components (currently empty)
-│   │   ├── userDashboard/    # User dashboard components
+│   │   ├── dashboard/    # User dashboard components
 │   │   ├── blog/      # Blog-related components
 │   │   │   ├── BlogCard.jsx          # Blog post card component
 │   │   │   ├── CategoriesTabs.jsx    # Blog category navigation tabs
 │   │   │   └── LatestBlogSection.jsx # Featured/latest blog posts section
-│   │   ├── interviewsQ/ # Interview question components
+│   │   ├── interviews/ # Interview question components
 │   │   │   └── LatestIntervQSection.jsx # Latest interview questions section
 │   │   ├── marketing/ # Marketing-related components
 │   │   │   ├── HeroSection.jsx       # Hero/banner section for landing pages
@@ -216,3 +217,5 @@ blog-app-and-admin-panel/
 
 
 
+https://aniq-ui-template2.vercel.app/
+https://publino-template.vercel.app/

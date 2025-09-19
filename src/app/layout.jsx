@@ -2,7 +2,7 @@ import { Outfit } from "next/font/google";
 import "./globals.css";
 import AppProviders  from "@/providers/app-providers";
 import { NextIntlClientProvider } from 'next-intl';
-import { getLocale, getMessages } from "next-intl/server";
+import getMessagesOnce from "@/i18n/i18n-helper";
 
 
 const outfit = Outfit({
@@ -12,8 +12,7 @@ const outfit = Outfit({
 });
 
 export async function generateMetadata() {
-  const locale = await getLocale();
-  const messages = await getMessages(locale);
+  const { locale, messages } = await getMessagesOnce();
 
   return {
     title: messages['metadata'].title,
@@ -33,8 +32,7 @@ export async function generateMetadata() {
 }
 
 export default async function RootLayout({ children }) {
-  const locale = await getLocale();
-  const messages = await getMessages(locale);
+  const { locale, messages } = await getMessagesOnce();
 
   return (
     <html lang={locale} suppressHydrationWarning>

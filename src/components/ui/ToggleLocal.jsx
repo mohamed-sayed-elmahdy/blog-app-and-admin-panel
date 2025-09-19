@@ -37,15 +37,16 @@ export default function ToggleLocal() {
 
     return (
         <div className="flex items-center">
+            <span id="toggleCheckBoxLabel" className="sr-only">Toggle language</span>
             <label htmlFor="toggleCheckBox" className="relative inline-flex items-center cursor-pointer">
                 <input
                     id="toggleCheckBox"
                     type="checkbox"
-                    className="sr-only "
+                    className="sr-only peer"
                     checked={locale}
                     onChange={toggleText}
                     aria-checked={locale}
-                    aria-label="Toggle language"
+                    aria-labelledby="toggleCheckBoxLabel"
                 />
 
                 <div className="w-[3.45rem] h-7 bg-transparent border border-[var(--border-blur)] 
@@ -62,8 +63,9 @@ export default function ToggleLocal() {
                     {/* knob */}
                     <span
                         className={
-                            "relative z-10 block w-5 h-5 bg-[var(--bg-white)] rounded-full shadow transform transition-transform duration-700 " +
-                            (locale ? "-translate-x-[1.6rem]" : "translate-x-0")
+                            "relative z-10 block w-5 h-5 bg-[var(--bg-white)] rounded-full shadow transform transition-transform duration-1000 " +
+                            (locale ? "-translate-x-[1.6rem]" : "translate-x-0") +
+                            " peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-offset-2 peer-focus:ring-indigo-500"
                         }
                     />
                 </div>
