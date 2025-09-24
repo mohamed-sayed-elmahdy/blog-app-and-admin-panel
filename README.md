@@ -103,10 +103,14 @@ blog-app-and-admin-panel/
 │   │       ├── LightRays.jsx         # Light rays animation component
 │   │       ├── BlurText.jsx          # Blurred text animation component
 │   │       └── ...                   # Additional UI components   
-│   ├── i18n/         # Internationalization (i18n) configuration and messages  
+│   ├── i18n/         # Internationalization (i18n) configuration and messages
+│   │   ├── config.js  # i18next configuration
+│   │   ├── i18n-helper.js    # Helper function for fetching i18n messages once in layout  
 │   │   └── requests.js    # API requests for i18n messages   
 │   └── lib/           # Utility functions and libraries
-│       ├── models     # Database models for MongoDB  
+│       ├── models     # Database models for MongoDB 
+│       │   ├── BlogModel.js # Blog model definition
+|       │   └── QuestionSchema.js # Question model definition
 │       └── config/     # Configuration helpers
 │           └── mongodb.js # MongoDB helper/connection
 ├── .eslintrc.json     # ESLint configuration for code quality

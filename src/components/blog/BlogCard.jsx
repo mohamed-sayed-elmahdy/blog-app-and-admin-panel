@@ -3,7 +3,9 @@ import Link from "next/link";
 import { useState } from "react";
 import { FaArrowRight, FaHeart, FaBookmark } from "react-icons/fa6";
 import ButtonLink from "@/components/ui/ButtonLink";
-// ...existing code...
+
+import { FaRegComment } from "react-icons/fa6";
+
 function BlogCard({
   id,
   title,
@@ -13,8 +15,10 @@ function BlogCard({
   image,
   author,
   author_img,
+  likes,
+  pinned,
 }) {
-  // like and read-later state (client-side only)
+ 
   const [liked, setLiked] = useState(false);
   const [saved, setSaved] = useState(false);
 
@@ -56,10 +60,10 @@ function BlogCard({
           left: light.x,
           top: light.y,
           opacity: light.visible ? 1 : 0,
-          transform: "translate(-50%, -50%)",
+          transform: "translate(-50%, -30%)",
           transition: "opacity 160ms linear, transform 160ms linear",
         }}
-        className="pointer-events-none absolute w-[550px] h-[550px] rounded-full -z-10 blur-[30px]"
+        className="pointer-events-none absolute w-[600px] h-[600px] rounded-full -z-10 blur-[30px]"
       >
         <div
           style={{
@@ -92,62 +96,75 @@ function BlogCard({
           </p>
           <span className="text-sm text-[var(--text-lowMuted)] ms-2">
             {date.toLocaleDateString("en-US", {
-                day: "numeric",
-                month: "short",
-                year: "numeric",
-              })}
+              day: "numeric",
+              month: "short",
+              year: "numeric",
+            })}
           </span>
         </div>
         <div className="py-2 px-2">
-          <h3 className="font-medium text-lg mb-2 tracking-tight text-[var(--text)]">
-            {title}
+          <h3 className="font-medium text-lg mb-2 tracking-tight text-[var(--text)]"
+          aria-label={`Blog title: ${title}`}
+          >
+            {title.slice(0, 35) + "..."}
           </h3>
-          <p className="mb-2 text-sm tracking-tight text-[var(--text-lowMuted)]">
+          <p className="mb-2 mt-auto text-sm tracking-tight text-[var(--text-lowMuted)]">
             {description}
           </p>
         </div>
       </Link>
-          {/* like and read-later buttons */}
-          <div className="flex items-center justify-start gap-1 ms-1 ">
-            <button
-              type="button"
-              aria-pressed={liked}
-              aria-label={liked ? "Unlike" : "Like"}
-              onClick={toggleLike}
-              className={`p-2 rounded-full transition-all duration-300 
-              }`}
-            >
-              
-                <FaHeart
-                  className={`text-lg transition-all duration-500 `}
-                  aria-hidden="true"
-                  fill={liked ? "#77C3EC" : "var(--text)"}
-          
-                />
-            
-             
 
-            </button>
+      {/* like, save and comment buttons */}
+      <div className="flex items-center justify-start gap-2 ms-1 ">
+        {/* Like Button */}
+        <button
+          type="button"
+          aria-pressed={liked}
+          aria-label={liked ? "Unlike" : "Like"}
+          onClick={toggleLike}
+          className="p-1 rounded-full transition-all duration-300 flex items-center gap-1"
+        >
+          <FaHeart
+            className="text-lg transition-all duration-500 hover:fill-[var(--like-blue-dark)]"
+            aria-hidden="true"
+            fill={liked ? "var(--like-blue-dark)" : "var(--text)"}
+          />
+          <span className="text-[13px] text-[var(--text)] transition-all duration-300">
+            {liked ? likes + 1 : likes}
+          </span>
+        </button>
 
-            <button
-              type="button"
-              aria-pressed={saved}
-              aria-label={saved ? "Remove from Read Later" : "Save for Read Later"}
-              onClick={toggleSave}
-              className={`p-2 rounded-full transition-all duration-500`}
-            >
-              <FaBookmark
-                className={`text-lg transition-all duration-500`}
-                aria-hidden="true"
-                fill={saved ? "#4C5FFF" : "var(--text)"}
-              />
-            </button>
-          </div>
+        {/* Save Button */}
+        <button
+          type="button"
+          aria-pressed={saved}
+          aria-label={saved ? "Remove from Read Later" : "Save for Read Later"}
+          onClick={toggleSave}
+          className="p-1 rounded-full transition-all duration-500"
+        >
+          <FaBookmark
+            className="text-lg transition-all duration-500 hover:fill-[var(--save-blue-light)]"
+            aria-hidden="true"
+            fill={saved ? "var(--save-blue-light)" : "var(--text)"}
+          />
+        </button>
+
+        {/* Comment Button */}
+        <div aria-label="Comments" className="p-1 hidden justify-start items-center gap-1">
+          <FaRegComment
+            className="text-lg transition-all duration-500"
+            aria-hidden="true"
+            fill="var(--text)"
+          />
+          <span className="text-[13px] text-[var(--text)]">5</span>
+        </div>
+      </div>
+
       <div className="flex items-center justify-between">
         <ButtonLink
           className="inline-block my-2 bg-transparent text-[var(--text)] px-4 py-2 rounded-full 
                  border border-[var(--btn-border)] hover:bg-[var(--btn-bg-hover)] hover:border-[var(--btn-border-hover)]
-                 ms-2 transition-all duration-300"
+                 ms-1 transition-all duration-300"
           href={`/blogs/${id}`}
         >
           Read More <FaArrowRight className="inline-block text-lg ms-1 rtl-flip" />
@@ -171,4 +188,3 @@ function BlogCard({
 }
 
 export default BlogCard;
-// ...existing code...

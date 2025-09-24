@@ -71,16 +71,18 @@ export default function BlogsPage() {
       <div className="flex flex-wrap gap-6 justify-center">
         {filteredBlogs.length > 0 ? (
           filteredBlogs.map((blog) => (
-            <BlogCard
+          <BlogCard
               key={blog.id}
               id={blog.id}
               title={blog.title}
-              date={blog.date}
-              description={blog.description}
+              date={blog.publishedAt || blog.createdAt} 
+              description={blog.content.slice(0, 95) + "..."} 
               category={blog.category}
               image={blog.image}
-              author={blog.author}
+              author={blog.authorName}
               author_img={blog.author_img}
+              likes={blog.likes}
+              pinned={blog.pinned}
             />
           ))
         ) : (

@@ -32,13 +32,13 @@
 
   /* Gradient (Dark Mode) */
   --bg-gradient-top-left: linear-gradient(to top left,
-    #000000, #000000, #000000, #000000, #000000, #060606, #0c0b0b, #111010, #191818, #211f1f, #2a2626, #322e2e);
+      #000000, #000000, #000000, #000000, #000000, #060606, #0c0b0b, #111010, #191818, #211f1f, #2a2626, #322e2e);
   --bg-gradient-bottom-left: linear-gradient(to bottom left,
- #000000, #000000, #000000, #000000, #000000, #060606, #0c0b0b, #111010, #191818, #211f1f, #2a2626, #322e2e);
+      #000000, #000000, #000000, #000000, #000000, #060606, #0c0b0b, #111010, #191818, #211f1f, #2a2626, #322e2e);
   --bg-gradient-top-right: linear-gradient(to top right,
- #000000, #000000, #000000,  #000000, #000000,  #060606, #0c0b0b, #111010, #191818, #211f1f, #2a2626, #322e2e);
+      #000000, #000000, #000000, #000000, #000000, #060606, #0c0b0b, #111010, #191818, #211f1f, #2a2626, #322e2e);
   --bg-gradient-bottom-right: linear-gradient(to bottom right,
- #000000, #000000, #000000,  #000000, #000000, #060606, #0c0b0b, #111010, #191818, #211f1f, #2a2626, #322e2e);
+      #000000, #000000, #000000, #000000, #000000, #060606, #0c0b0b, #111010, #191818, #211f1f, #2a2626, #322e2e);
 
   /*  Stars Color (Dark Mode)*/
   --star-color: rgba(255, 255, 255, 0.6);
@@ -46,6 +46,11 @@
   --light-start: rgba(255, 255, 255, 0.19);
   --light-mid: rgba(255, 255, 255, 0.10);
   --light-end: rgba(255, 255, 255, 0.05);
+
+  /* like and save buttons */
+  --like-blue-dark: #2563eb;
+  --save-blue-light: #38bdf8;
+
 }
 
 .light {
@@ -76,30 +81,35 @@
   --accent-color: #00ffff;
   /*  Light Mode Gradients */
   --bg-gradient-top-left: linear-gradient(to top left,
-    #ffffff,  #ffffff, #f9f9f9, #f3f3f3, #ebebeb, #ebebeb,  #e4e4e4, #d7d7d7);
+      #ffffff, #ffffff, #f9f9f9, #f3f3f3, #ebebeb, #ebebeb, #e4e4e4, #d7d7d7);
   --bg-gradient-bottom-left: linear-gradient(to bottom left,
-    #ffffff,  #ffffff, #f9f9f9, #f3f3f3, #ebebeb, #ebebeb,  #e4e4e4, #d7d7d7);
+      #ffffff, #ffffff, #f9f9f9, #f3f3f3, #ebebeb, #ebebeb, #e4e4e4, #d7d7d7);
   --bg-gradient-top-right: linear-gradient(to top right,
-       #ffffff,  #ffffff, #f9f9f9, #f3f3f3, #ebebeb, #ebebeb,   #e4e4e4, #d7d7d7);
+      #ffffff, #ffffff, #f9f9f9, #f3f3f3, #ebebeb, #ebebeb, #e4e4e4, #d7d7d7);
   --bg-gradient-bottom-right: linear-gradient(to bottom right,
-      #ffffff,  #ffffff, #f9f9f9, #f3f3f3, #ebebeb, #ebebeb,   #e4e4e4, #d7d7d7);
+      #ffffff, #ffffff, #f9f9f9, #f3f3f3, #ebebeb, #ebebeb, #e4e4e4, #d7d7d7);
 
   /*  Light Mode Stars */
-  --star-color: rgba(0, 0, 0, 0.5); 
-    /* Mouse Cursor light */
-    --light-start: rgba(0, 0, 0, 0.12);
-  --light-mid: rgba(0, 0, 0, 0.09);
-  --light-end: rgba(0, 0, 0, 0.05);
+  --star-color: rgba(0, 0, 0, 0.5);
+  /* Mouse Cursor light */
+  --light-start: rgba(0, 0, 0, 0.10);
+  --light-mid: rgba(0, 0, 0, 0.06);
+  --light-end: rgba(0, 0, 0, 0.03);
+  /* Like and Save Buttons */
+  --like-blue-dark: #3b82f6;
+  --save-blue-light: #0284c7;
 }
 
 
 html {
-  color-scheme: light dark ;
+  color-scheme: light dark;
   scroll-behavior: smooth;
 }
+
 html.light {
   color-scheme: light;
 }
+
 html.dark {
   color-scheme: dark;
 }
@@ -116,7 +126,7 @@ html[lang="ar"] {
 }
 
 html[lang="en"] {
-  direction: ltr; 
+  direction: ltr;
 }
 
 /* Gradient backgrounds */
@@ -125,16 +135,19 @@ html[lang="en"] {
   background-size: cover;
   background-position: center;
 }
+
 .bg-gradient-bottom-left {
   background: var(--bg-gradient-bottom-left);
   background-size: cover;
   background-position: center;
 }
+
 .bg-gradient-top-right {
   background: var(--bg-gradient-top-right);
   background-size: cover;
   background-position: center;
 }
+
 .bg-gradient-bottom-right {
   background: var(--bg-gradient-bottom-right);
   background-size: cover;

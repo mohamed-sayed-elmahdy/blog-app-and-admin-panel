@@ -3,10 +3,10 @@ import { useState, useMemo } from "react";
 import BlogCard from "@/components/blog/BlogCard";
 import { blog_data } from "@/assets/assets";
 import ButtonLink from "@/components/ui/ButtonLink";
-import  CategoriesTabs  from "@/components/blog/CategoriesTabs"; 
+import CategoriesTabs from "@/components/blog/CategoriesTabs";
 
 function LatestBlogSection() {
-  
+
   const [selectedCategory, setSelectedCategory] = useState("All");
   // function to filter blogs by category
   const filteredBlogs = useMemo(
@@ -37,12 +37,14 @@ function LatestBlogSection() {
               key={blog.id}
               id={blog.id}
               title={blog.title}
-               date={blog.date}
-              description={blog.description}
+              date={blog.publishedAt || blog.createdAt} 
+              description={blog.content.slice(0, 95) + "..."} 
               category={blog.category}
               image={blog.image}
-              author={blog.author}
+              author={blog.authorName}
               author_img={blog.author_img}
+              likes={blog.likes}
+              pinned={blog.pinned}
             />
           ))
         ) : (
@@ -50,6 +52,7 @@ function LatestBlogSection() {
             No blogs found in this category.
           </p>
         )}
+
       </div>
       <div className="flex items-center justify-center mt-10">
         <ButtonLink href="/blogs" className="px-6 py-2 bg-[var(--bg-white)] text-[var(--black-text)] rounded-lg hover:bg-[var(--bg-black)] hover:text-[var(--white-text)] border border-[var(--white-border)] transition-all duration-300">

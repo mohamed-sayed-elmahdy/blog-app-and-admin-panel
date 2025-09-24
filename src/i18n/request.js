@@ -13,7 +13,7 @@ const defaultLocale = DEFAULT_LOCALE;
 export default getRequestConfig(async ({}) => {
 
   const store = await cookies();
-  const localeFromCookie = store.get(LOCALE_COOKIE_NAME)?.value || defaultLocale;
+  const localeFromCookie = store.get(LOCALE_COOKIE_NAME)?.value;
 
 const locale = localeFromCookie && supported.includes(localeFromCookie) 
     ? localeFromCookie 
