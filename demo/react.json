@@ -1,13 +1,9 @@
 [
   {
-    "id": "q001",
+    "id": "1",
     "type": {
       "en": "theoretical",
       "ar": "نظري"
-    },
-    "language": {
-      "en": "en",
-      "ar": "ar"
     },
     "difficulty": {
       "en": "medium",
@@ -29,14 +25,27 @@
       "en": "What is useState and why do we use it in React?",
       "ar": "ما هو useState ولماذا نستخدمه في React؟"
     },
-    "codeSnippet": "",
+    "codeSnippetQuestion": {"code": "egfwegweg", "lang": "jsx"},
     "examples": [],
     "media": {
       "image": "",
       "video": "",
       "audio": ""
     },
-    "options": [],
+    "optionsForMcq": [
+      {
+        "id": "",
+        "text": {
+          "en": "",
+          "ar": ""
+        },
+        "isCorrect": false,
+        "feedback": {
+          "en": "",
+          "ar": ""
+        }
+      }
+    ],
     "answer": {
       "en": "### ✨ useState in React\n\n`useState` is a built-in **React Hook** that allows functional components to have their own **state**.\n\nBefore hooks, only class components could manage state using `this.state`. With `useState`, we can store and update values directly inside functional components.\n\nIt returns an **array** with two elements:\n\n1. **The current state value.**\n2. **A function to update that state.**\n\n### 🔑 Initial Value\nThe **initial value** of the state is passed as an argument to `useState`. This value will be used only during the first render.\n\n---\n\n### 🧑‍💻 Example:\n```jsx\nimport { useState } from \"react\";\n\nfunction Counter() {\n  const [count, setCount] = useState(0); // initial value = 0\n\n  return (\n    <div className=\"flex flex-col items-center justify-center gap-4 p-6 bg-gray-100 rounded-2xl shadow-md w-64 mx-auto\">\n      <p className=\"text-xl font-semibold text-gray-700\">Count: {count}</p>\n      <button\n        onClick={() => setCount(count + 1)}\n        className=\"px-4 py-2 bg-blue-500 text-white font-medium rounded-lg shadow hover:bg-blue-600 transition\"\n      >\n        Increment\n      </button>\n    </div>\n  );\n}\n```\n\n- `count` → current state.\n- `setCount` → function to update the state.\n- On every call to `setCount`, the component **re-renders** with the new value.",
       "ar": "### ✨ useState في React\n\n`useState` هو **هوك مدمج** في React يسمح للمكونات الوظيفية بامتلاك **الحالة (state)** الخاصة بها.\n\nقبل ظهور الهوكس، كانت المكونات الكلاسيكية فقط تدير الحالة باستخدام `this.state`. مع `useState` يمكننا تخزين القيم وتحديثها مباشرة داخل المكونات الوظيفية.\n\nترجع الدالة **مصفوفة** مكونة من عنصرين:\n\n1. **القيمة الحالية للحالة.**\n2. **دالة لتحديث الحالة.**\n\n### 🔑 القيمة الابتدائية (Initial Value)\nالقيمة الابتدائية للحالة يتم تمريرها كوسيط إلى `useState`، وتُستخدم فقط في أول عملية **render**.\n\n---\n\n### 🧑‍💻 مثال:\n```jsx\nimport { useState } from \"react\";\n\nfunction Counter() {\n  const [count, setCount] = useState(0); // القيمة الابتدائية = 0\n\n  return (\n    <div className=\"flex flex-col items-center justify-center gap-4 p-6 bg-gray-100 rounded-2xl shadow-md w-64 mx-auto\">\n      <p className=\"text-xl font-semibold text-gray-700\">Count: {count}</p>\n      <button\n        onClick={() => setCount(count + 1)}\n        className=\"px-4 py-2 bg-blue-500 text-white font-medium rounded-lg shadow hover:bg-blue-600 transition\"\n      >\n        زيادة\n      </button>\n    </div>\n  );\n}\n```\n\n- `count` → الحالة الحالية.\n- `setCount` → دالة لتحديث الحالة.\n- عند كل استدعاء لـ `setCount` يتم **إعادة عرض** المكون بالقيمة الجديدة.",
@@ -44,14 +53,11 @@
         "en": [],
         "ar": []
       },
-      "explanation": {
-        "en": "",
-        "ar": ""
-      }
+      "codeSnippetAnswer": {"code": "", "lang": "javascript"}
     },
     "evaluation": {
       "points": 5,
-      "timeEstimate": "2 min"
+      "timeEstimate": ""
     },
     "interaction": {
       "testYourself": true,
@@ -62,7 +68,84 @@
       "author": "Mohamed Sayed",
       "createdAt": "2025-09-23T20:00:00Z",
       "updatedAt": "2025-09-23T20:00:00Z",
-      "references": ["https://react.dev/reference/react/useState"]
+      "references": [
+        "https://react.dev/reference/react/useState"
+      ]
+    }
+  },
+  {
+    "id": "2",
+    "type": {
+      "en": "theoretical",
+      "ar": "نظري"
+    },
+    "difficulty": {
+      "en": "medium",
+      "ar": "متوسط"
+    },
+    "categories": [
+      {
+        "en": "React Basics",
+        "ar": "أساسيات React"
+      }
+    ],
+    "tags": [
+      {
+        "en": "state, useState, React, JSX, Tailwind",
+        "ar": "الحالة, useState, React, JSX, Tailwind"
+      }
+    ],
+    "question": {
+      "en": "Can we update the state directly? Why shouldn't we do that?",
+      "ar": "هل يمكن تحديث الحالة (state) مباشرة؟ ولماذا لا يجب فعل ذلك؟"
+    },
+    "codeSnippetQuestion": "// ❌ Wrong\nstate.count = 5;\n\n// ✅ Correct\nsetCount(5);",
+    "examples": [],
+    "media": {
+      "image": "",
+      "video": "",
+      "audio": ""
+    },
+    "optionsForMcq": [
+      {
+        "id": "",
+        "text": {
+          "en": "",
+          "ar": ""
+        },
+        "isCorrect": false,
+        "feedback": {
+          "en": "",
+          "ar": ""
+        }
+      }
+    ],
+    "answer": {
+      "en": "No, we should never update the state directly because React relies on immutability and state references to detect changes. If we directly mutate the state (e.g., state.value = newValue), React won’t know that the state has changed, so it won’t trigger a re-render.\n\nInstead, we always use the state updater function returned by useState (e.g., setState) to ensure React schedules a proper re-render.\n\nKey points:\n1. Direct state mutation breaks React's reactivity.\n2. React uses state references to detect changes.\n3. Using setState ensures proper component re-render.\n4. This principle applies in JSX, MDX, and when styling with Tailwind.\n5. Always treat state as immutable for predictable UI updates.",
+      "ar": "لا، لا يجب أبدًا تحديث الحالة مباشرة لأن React تعتمد على الثبات (immutability) ومراجع الحالة لاكتشاف التغييرات. إذا قمنا بتغيير الحالة مباشرة (مثل state.value = newValue)، فلن يعرف React أن الحالة تغيرت وبالتالي لن يقوم بإعادة العرض (re-render).\n\nبدلاً من ذلك، نستخدم دائمًا دالة تحديث الحالة التي تعيدها useState (مثل setState) لضمان قيام React بإعادة العرض بشكل صحيح.\n\nالنقاط الأساسية:\n1. تعديل الحالة مباشرة يكسر تفاعل React.\n2. React تستخدم مراجع الحالة لاكتشاف التغييرات.\n3. استخدام setState يضمن إعادة عرض المكون بشكل صحيح.\n4. هذا المبدأ ينطبق على JSX وMDX وعند استخدام Tailwind.\n5. اعتبر الحالة دائمًا ثابتة (immutable) للحصول على واجهة مستخدم متوقعة.",
+      "hints": {
+        "en": [],
+        "ar": []
+      },
+      "codeSnippetAnswer": "// ❌ Wrong\nstate.count = 5;\n\n// ✅ Correct\nsetCount(5);"
+    },
+    "evaluation": {
+      "points": 5,
+      "timeEstimate": "2m"
+    },
+    "interaction": {
+      "testYourself": true,
+      "showAnswer": true,
+      "markAsMemorized": true
+    },
+    "metadata": {
+      "author": "Mohamed Sayed",
+      "createdAt": "2025-09-24",
+      "updatedAt": "2025-09-24",
+      "references": [
+        "https://reactjs.org/docs/state-and-lifecycle.html",
+        "https://react.dev/learn/state-a-components-memory"
+      ]
     }
   }
 ]

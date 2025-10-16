@@ -10,10 +10,10 @@ export default function PublicLayout({ children }) {
   return (
     <div className="min-h-screen relative ">
       {/* 🌌 Background Grids */}
-      <div className="hidden dark:block bg-gradient-top-left fixed top-0 left-0 w-[51.5%] h-[51vh] z-[-1] outline-0 border-none " />
-      <div className="hidden dark:block bg-gradient-bottom-left fixed top-1/2 left-0 w-[51.5%] h-[50vh] z-[-1] outline-0 border-none" />
-      <div className="hidden dark:block bg-gradient-top-right fixed top-0 left-1/2 w-[51.5%] h-[51vh] z-[-1] outline-0 border-none" />
-      <div className="hidden dark:block bg-gradient-bottom-right fixed top-1/2 left-1/2 w-[51.5%] h-[50vh] z-[-1] outline-0 border-none" />
+      <div className="hidden dark:block gradient-top-left fixed top-0 left-0 w-[51.5%] h-[51vh] z-[-1] outline-0 border-none " />
+      <div className="hidden dark:block gradient-bottom-left fixed top-1/2 left-0 w-[51.5%] h-[50vh] z-[-1] outline-0 border-none" />
+      <div className="hidden dark:block gradient-top-right fixed top-0 left-1/2 w-[51.5%] h-[51vh] z-[-1] outline-0 border-none" />
+      <div className="hidden dark:block gradient-bottom-right fixed top-1/2 left-1/2 w-[51.5%] h-[50vh] z-[-1] outline-0 border-none" />
 
       {/* ✨ Decorative Stars */}
       <div className="fixed inset-8">

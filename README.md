@@ -44,10 +44,10 @@ blog-app-and-admin-panel/
 │   │   │   └── test/        # Test page section
 │   │   │       └── page.jsx  # Test page component
 │   │   ├── api/       # API routes for backend functionality
-│   │   │   ├── blogs/
-│   │   │   │   ├── route.js
-│   │   │   │   └── [id]/
-│   │   │   │       └── route.js
+│   │   │   ├── blogs/ 
+│   │   │   │   ├── route.js   
+│   │   │   │   └── [id]/ 
+│   │   │   │       └── route.js 
 │   │   │   ├── emails/
 │   │   │   │   ├── route.js
 │   │   │   │   └── [id]/
@@ -62,11 +62,15 @@ blog-app-and-admin-panel/
 │   │   │   │   └── page.jsx
 │   │   │   ├── signup/
 │   │   │   │   └── page.jsx
+│   │   │   ├── forgotPassword/
+│   │   │   │   └── page.jsx
+│   │   │   ├── resetPassword/
+│   │   │   │   └── page.jsx
 │   │   │   └── verify/
 │   │   │       └── page.jsx
 │   │   ├── favicon.ico # Site favicon displayed in browser tabs
 │   │   ├── globals.css # Global CSS styles for the entire application
-│   │   └── layout.jsx # Root layout component wrapping all pages
+│   │   └── layout.jsx # Root layout component wrapping all pages admin and public
 │   ├── assets/        # Application assets for internal use
 │   │   └── ...        # Various icons, images, and UI elements
 │   ├── messages/      # Internationalization (i18n) messages
@@ -107,12 +111,19 @@ blog-app-and-admin-panel/
 │   │   ├── config.js  # i18next configuration
 │   │   ├── i18n-helper.js    # Helper function for fetching i18n messages once in layout  
 │   │   └── requests.js    # API requests for i18n messages   
-│   └── lib/           # Utility functions and libraries
-│       ├── models     # Database models for MongoDB 
-│       │   ├── BlogModel.js # Blog model definition
-|       │   └── QuestionSchema.js # Question model definition
-│       └── config/     # Configuration helpers
-│           └── mongodb.js # MongoDB helper/connection
+│   ├── lib/           # Utility functions and libraries
+│   │   ├── models     # Database models for MongoDB 
+│   │   │   ├── BlogModel.js # Blog model definition
+│   │   │   └── QuestionSchema.js # Question model definition
+│   │   ├── auth/ # Authentication utilities
+│   │   │   └── utils.js # functions for generating, verifying tokens and hashing passwords
+│   │   └── config/     # Configuration helpers
+│   │   │   ├── cloudinary.js # Cloudinary helper
+│   │   │   └── mongodb.js # MongoDB helper/connection
+│   └── utils/ # Utility functions and libraries
+│       ├── generateSlug.js # Slug generator helper
+│       └── uploadImage.js # Image upload helper
+| 
 ├── .eslintrc.json     # ESLint configuration for code quality
 ├── .gitignore         # Specifies files to ignore in Git
 ├── README.md          # Project documentation (this file)

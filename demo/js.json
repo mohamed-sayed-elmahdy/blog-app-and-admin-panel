@@ -1,42 +1,118 @@
 [
   {
-    "id": "",
+    "id": "1",
     "type": {
-      "en": "",
-      "ar": ""
-    },
-    "language": {
-      "en": "",
-      "ar": ""
+      "en": "theoretical",
+      "ar": "نظري"
     },
     "difficulty": {
-      "en": "",
-      "ar": ""
+      "en": "easy",
+      "ar": "سهل"
     },
     "categories": [
       {
-        "en": "",
-        "ar": ""
+        "en": "JavaScript",
+        "ar": "JavaScript"
       }
     ],
     "tags": [
       {
-        "en": "",
-        "ar": ""
+        "en": "function declaration, function expression",
+        "ar": "function declaration, function expression"
       }
     ],
     "question": {
-      "en": "",
-      "ar": ""
+      "en": "What is the difference between function declaration and function expression?",
+      "ar": "ما الفرق بين function declaration و function expression؟"
     },
-    "codeSnippet": "",
+    "codeSnippetQuestion": {
+      "code": "",
+      "lang": "javascript"
+    },
     "examples": [],
     "media": {
       "image": "",
       "video": "",
       "audio": ""
     },
-    "options": [
+    "optionsForMcq": [
+      {
+        "id": "",
+        "text": {
+          "en": "",
+          "ar": ""
+        },
+        "isCorrect": false,
+        "feedback": {
+          "en": "",
+          "ar": ""
+        }
+      }
+    ],
+    "answer": {
+      "en": "\n\n**Answer:**\n\nA **function declaration** is a function defined using the `function` keyword followed by its name. A function declaration can be called even before it appears in its scope because it is **hoisted**.\n\nExample:\n\n```js\nsayHello(); // ✅ works, because of hoisting\n\nfunction sayHello() {\n  console.log(\"Hello from a function declaration!\");\n}\n```\n\nA **function expression**, on the other hand, is a function assigned as a value to a variable. It can be **anonymous** or **named**. Named function expressions are useful for recursion or debugging. Unlike function declarations, function expressions are **not hoisted**, so they cannot be called before they are defined.\n\nExample:\n\n```js\nsayHello(); // ❌ Error: Cannot access 'sayHello' before initialization\n\nconst sayHello = function() {\n  console.log(\"Hello from a function expression!\");\n};\n```\n\n👉 **Key differences:**\n\n* **Hoisting:** Function declarations are hoisted, function expressions are not.\n* **Readability:** Declarations make code more structured when functions are used in multiple places.\n* **Flexibility:** Expressions are more flexible since they can be passed as arguments (e.g., callbacks) or stored in data structures.\n\n",
+      "ar": "\n\n**الإجابة:**\n\nالـ **function declaration** هو تعريف دالة باستخدام كلمة `function` متبوع باسمها. الـ function declaration ممكن تستدعيه حتى قبل ما يظهر في الـ scope بتاعه لأنه بيتم **hoisting**.\n\nمثال:\n\n```js\nsayHello(); // ✅ شغال بسبب hoisting\n\nfunction sayHello() {\n  console.log(\"Hello from a function declaration!\");\n}\n```\n\nأما الـ **function expression** فهو عبارة عن دالة بتتخزن كـ قيمة في متغير. ممكن تكون **anonymous** أو **named**. الـ named function expressions مفيدة للتكرار (recursion) أو الـ debugging. وعلى عكس الـ function declarations، الـ function expressions مش بيحصل لها **hoisting**، وبالتالي مينفعش تستدعيها قبل تعريفها.\n\nمثال:\n\n```js\nsayHello(); // ❌ Error: Cannot access 'sayHello' before initialization\n\nconst sayHello = function() {\n  console.log(\"Hello from a function expression!\");\n};\n```\n\n👉 **الاختلافات الرئيسية:**\n\n* **Hoisting:** الـ function declarations بيحصل لها hoisting لكن الـ function expressions لأ.\n* **Readability:** الـ declarations بتخلي الكود أوضح خصوصًا لما تستخدم الدوال في أكتر من مكان.\n* **Flexibility:** الـ expressions أكثر مرونة لأنها ممكن تتخزن كـ callback أو جوا data structure.\n\n",
+      "hints": {
+        "en": [],
+        "ar": []
+      },
+      "codeSnippetAnswer": {
+        "code": "",
+        "lang": "javascript"
+      }
+    },
+    "evaluation": {
+      "points": 5,
+      "timeEstimate": ""
+    },
+    "interaction": {
+      "testYourself": true,
+      "showAnswer": true,
+      "markAsMemorized": true
+    },
+    "metadata": {
+      "author": "Mohamed Sayed",
+      "createdAt": "2025-10-01T20:00:00Z",
+      "updatedAt": "2025-10-01T20:00:00Z",
+      "references": [
+        ""
+      ]
+    }
+  },
+  {
+    "id": "2",
+    "type": {
+      "en": "theoretical",
+      "ar": "نظري"
+    },
+    "difficulty": {
+      "en": "easy",
+      "ar": "سهل"
+    },
+    "categories": [
+      {
+        "en": "JavaScript",
+        "ar": "JavaScript"
+      }
+    ],
+    "tags": [
+      {
+        "en": "closure, JavaScript",
+        "ar": "closure, JavaScript"
+      }
+    ],
+    "question": {
+      "en": "What is a closure in JavaScript?",
+      "ar": "ما هو الـ closure في JavaScript؟"
+    },
+    "codeSnippetQuestion": {"code": "", "lang": ""},
+    "examples": [],
+    "media": {
+      "image": "",
+      "video": "",
+      "audio": ""
+    },
+    "optionsForMcq": [
       {
         "id": "",
         "text": {
@@ -57,13 +133,84 @@
         "en": [],
         "ar": []
       },
-      "explanation": {
-        "en": "",
-        "ar": ""
-      }
+      "codeSnippetAnswer": {"code": " ", "lang": ""}
     },
     "evaluation": {
-      "points": 0,
+      "points": 5,
+      "timeEstimate": ""
+    },
+    "interaction": {
+      "testYourself": true,
+      "showAnswer": true,
+      "markAsMemorized": true
+    },
+    "metadata": {
+      "author": "Mohamed Sayed",
+      "createdAt": "2025-10-01T20:00:00Z",
+      "updatedAt": "2025-10-01T20:00:00Z",
+      "references": [
+        "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures"
+      ]
+    }
+  },
+  {
+    "id": "3",
+    "type": {
+      "en": "theoretical",
+      "ar": "نظري"
+    },
+    "difficulty": {
+      "en": "easy",
+      "ar": "سهل"
+    },
+    "categories": [
+      {
+        "en": "JavaScript",
+        "ar": "JavaScript"
+      }
+    ],
+    "tags": [
+      {
+        "en": "arrow function, JavaScript",
+        "ar": "arrow function, JavaScript"
+      }
+    ],
+    "question": {
+      "en": "What is the Arrow Function? What are its advantages and disadvantages?",
+      "ar": "ما هو الـ Arrow Function؟ وما هي مميزاته وعيوبه؟"
+    },
+    "codeSnippetQuestion": {"code": "", "lang": ""},
+    "examples": [],
+    "media": {
+      "image": "",
+      "video": "",
+      "audio": ""
+    },
+    "optionsForMcq": [
+      {
+        "id": "",
+        "text": {
+          "en": "",
+          "ar": ""
+        },
+        "isCorrect": false,
+        "feedback": {
+          "en": "",
+          "ar": ""
+        }
+      }
+    ],
+    "answer": {
+      "en": "",
+      "ar": "",
+      "hints": {
+        "en": [],
+        "ar": []
+      },
+      "codeSnippetAnswer": {"code": "", "lang": ""}
+    },
+    "evaluation": {
+      "points": 5,
       "timeEstimate": ""
     },
     "interaction": {
@@ -75,7 +222,9 @@
       "author": "",
       "createdAt": "",
       "updatedAt": "",
-      "references": []
+      "references": [
+        ""
+      ]
     }
   }
 ]

@@ -1,0 +1,77 @@
+[
+  {
+    "id": "1",
+    "type": {
+      "en": "",
+      "ar": ""
+    },
+    "difficulty": {
+      "en": "",
+      "ar": ""
+    },
+    "categories": [
+      {
+        "en": "",
+        "ar": ""
+      }
+    ],
+    "tags": [
+      {
+        "en": "",
+        "ar": ""
+      }
+    ],
+    "question": {
+      "en": "",
+      "ar": ""
+    },
+    "codeSnippetQuestion": {"code": "", "lang": ""},
+    "examples": [],
+    "media": {
+      "image": "",
+      "video": "",
+      "audio": ""
+    },
+    "optionsForMcq": [
+      {
+        "id": "",
+        "text": {
+          "en": "",
+          "ar": ""
+        },
+        "isCorrect": false,
+        "feedback": {
+          "en": "",
+          "ar": ""
+        }
+      }
+    ],
+    "answer": {
+      "en": "",
+      "ar": "",
+      "hints": {
+        "en": [],
+        "ar": []
+      },
+      "codeSnippetAnswer": {"code": "", "lang": ""}
+    },
+    "evaluation": {
+      "points": 5,
+      "timeEstimate": ""
+    },
+    "interaction": {
+      "testYourself": true,
+      "showAnswer": true,
+      "markAsMemorized": true
+    },
+    "metadata": {
+      "author": "",
+      "createdAt": "",
+      "updatedAt": "",
+      "references": [
+        ""
+      ]
+    }
+  }
+]
+
