@@ -13,14 +13,16 @@ import {
   SidebarProvider,
   SidebarTrigger,
 } from '@/components/ui/sidebar'
+import ThemeSwitch from '@/components/shared/ThemeSwitch'
+import ToggleLocal from '@/components/ui/ToggleLocal'
 
 export default function AdminDashboardLayout({ children }) {
   return (
     <SidebarProvider>
       <AppSidebar />
       <SidebarInset>
-        <header className="flex h-16 shrink-0 items-center gap-2">
-          <div className="flex items-center gap-2 px-4">
+        <header className="flex h-16 shrink-0 items-center justify-between gap-2 px-4">
+          <div className="flex items-center gap-2 ">
             <SidebarTrigger className="-ml-1" />
             <Separator
               orientation="vertical"
@@ -40,6 +42,11 @@ export default function AdminDashboardLayout({ children }) {
               </BreadcrumbList>
             </Breadcrumb>
           </div>
+        <div className='flex items-center gap-4'>
+        <ToggleLocal />
+        <ThemeSwitch />
+   
+        </div>
         </header>
         <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
           <div className="grid auto-rows-min gap-4 md:grid-cols-3">
