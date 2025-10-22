@@ -98,6 +98,11 @@ blog-app-and-admin-panel/
 │   │   │   ├── PublicFooter.jsx      # Footer for public-facing pages
 │   │   │   ├── PublicHeader.jsx      # Header for public-facing pages
 │   │   │   └── ThemeSwitch.jsx       # Theme switcher component
+│   │   ├── skeleton/ # Skeleton components for loading states
+│   │   │   └── blogsSkeleton/ # Skeleton components for blogs
+│   │   │          ├── categorySkeleton.jsx # Skeleton component for category loading
+│   │   │          └── blogSkeleton.jsx # Skeleton component for blog loading
+│   │   │   
 │   │   └── ui/        # UI components and design system elements
 │   │       ├── Button.jsx            # Reusable button component
 │   │       ├── ButtonLink.jsx        # Button styled link component

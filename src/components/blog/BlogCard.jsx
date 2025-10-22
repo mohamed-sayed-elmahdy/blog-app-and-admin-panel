@@ -3,22 +3,32 @@ import Link from "next/link";
 import { useState } from "react";
 import { FaArrowRight, FaHeart, FaBookmark } from "react-icons/fa6";
 import ButtonLink from "@/components/ui/ButtonLink";
-
 import { FaRegComment } from "react-icons/fa6";
+import { useLocale } from "next-intl";
 
 function BlogCard({
   id,
   title,
-  date,
+  content,
+  createdAt,
   description,
   category,
   image,
-  author,
-  author_img,
+  authorName,
+  authorImage,
   likes,
   pinned,
 }) {
- 
+
+  const locale = useLocale();
+
+  const formattedDate = createdAt && new Date(createdAt).toLocaleDateString(locale, {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+  });
+
+
   const [liked, setLiked] = useState(false);
   const [saved, setSaved] = useState(false);
 
@@ -50,7 +60,7 @@ function BlogCard({
     <article
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="relative max-w-[330px] bg-[var(--bg-blur)] backdrop-blur-[15px] border border-[var(--border-blur)] rounded-2xl
+      className="relative max-w-[350px] w-full bg-[var(--bg-blur)] backdrop-blur-[15px] border border-[var(--border-blur)] rounded-2xl
       shadow-md shadow-white/10 text-[var(--text)] overflow-hidden transition-all duration-300"
     >
       {/* subtle mouse-follow light */}
@@ -80,42 +90,38 @@ function BlogCard({
       <Link
         href={`/blogs/${id}`}
         className="block"
-        aria-label={`Read more about ${title}`}
-        title={title}
+        aria-label={`Read more about ${title[locale]}`}
+        title={title[locale]}
       >
         <Image
-          className="rounded-t-2xl w-full object-cover"
           src={image}
-          alt={`Image for ${title}`}
-          width={100}
-          height={100}
+          alt={`Image for ${title[locale]}`}
+          width={800}
+          height={600}
+          className="rounded-t-2xl w-full object-cover max-h-[280px]"
         />
         <div className="flex items-center justify-between ps-2 pe-3 mt-4">
-          <p className="inline-block bg-[var(--bg-white)] text-[var(--black-text)] text-sm rounded-full px-4 py-1">
-            {category}
+          <p className="inline-block capitalize bg-[var(--bg-white)] text-[var(--black-text)] text-sm rounded-full px-4 py-1">
+            {category[locale]}
           </p>
           <span className="text-sm text-[var(--text-lowMuted)] ms-2">
-            {date.toLocaleDateString("en-US", {
-              day: "numeric",
-              month: "short",
-              year: "numeric",
-            })}
+            {formattedDate}
           </span>
         </div>
         <div className="py-2 px-2">
           <h3 className="font-medium text-lg mb-2 tracking-tight text-[var(--text)]"
-          aria-label={`Blog title: ${title}`}
+            aria-label={`Blog title: ${title[locale]}`}
           >
-            {title.slice(0, 35) + "..."}
+            {title[locale].slice(0, 35) + "..."}
           </h3>
           <p className="mb-2 mt-auto text-sm tracking-tight text-[var(--text-lowMuted)]">
-            {description}
+            {content[locale].slice(0, 50) + "..."}
           </p>
         </div>
       </Link>
 
       {/* like, save and comment buttons */}
-      <div className="flex items-center justify-start gap-2 ms-1 ">
+      <div className="flex items-center justify-start gap-2 ms-1 mb-2">
         {/* Like Button */}
         <button
           type="button"
@@ -171,16 +177,14 @@ function BlogCard({
         </ButtonLink>
 
         <div className="flex items-center me-2">
-
-
           <Image
-            src={author_img}
-            alt={`Author image for ${author}`}
+            src={authorImage}
+            alt={`Author image for ${authorName[locale]}`}
             width={20}
             height={20}
-            className="rounded-full me-1"
+            className="rounded-full me-1 w-[20px] h-[20px]"
           />
-          <span className="text-sm text-[var(--text-lowMuted)]">{author}</span>
+          <span className="text-sm text-[var(--text-lowMuted)]">{authorName[locale]}</span>
         </div>
       </div>
     </article>

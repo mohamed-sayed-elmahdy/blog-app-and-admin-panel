@@ -1,6 +1,6 @@
 import { Outfit } from "next/font/google";
 import "./globals.css";
-import AppProviders  from "@/providers/app-providers";
+import AppProviders  from "@/providers/AppProviders";
 import { NextIntlClientProvider } from 'next-intl';
 import getMessagesOnce from "@/i18n/i18n-helper";
 

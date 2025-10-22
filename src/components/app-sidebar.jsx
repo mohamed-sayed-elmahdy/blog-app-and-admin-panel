@@ -120,6 +120,30 @@ const data = {
         },
       ],
     },
+    {
+      title: "Blogs",
+      url: "/dashboard/blogs",
+      icon: BookOpen,
+      items: [
+        {
+          title: "All Blogs",
+          url: "#",
+        },
+        
+      ],
+    },
+    {
+      title: "Interviews",
+      url: "/dashboard/interviews",
+      icon: BookOpen,
+      items: [
+        {
+          title: "All Categories",
+          url: "#",
+        },
+        
+      ],
+    },
   ],
   navSecondary: [
     {

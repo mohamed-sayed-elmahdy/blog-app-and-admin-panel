@@ -1,7 +1,7 @@
-export default function dashboard() {
+export default function Dashboard() {
   return (
     <>
-      <h1 className="text-2xl font-bold text-black">Hello Mohamed, admin</h1>
+      <h1 className="text-2xl font-bold">Hello Mohamed, admin</h1>
     </>
   );
 }

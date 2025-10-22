@@ -7,7 +7,9 @@ import { generateUniqueSlug } from '@/utils/generateSlug';
 
 export async function GET(request) {
     await connectDB();
-    return NextResponse.json({ ok: true, message: {blogs: []} });
+    const blogs = await Blog.find();
+
+    return NextResponse.json({ blogs: blogs, ok: true, message: "Blogs fetched successfully" });
 }
 
 export async function POST(request) {
