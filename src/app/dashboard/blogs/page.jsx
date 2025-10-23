@@ -20,7 +20,7 @@ function Blogs() {
     if (!categoriesLoading && (!categories || categories.length === 0)) {
         return <p>No categories found</p>;
     }
-    if (categoriesError) return <p>Can't load categories</p>;
+    if (categoriesError) return <p>Can&#39;t load categories</p>;
     console.log(categories, blogs, filteredBlogs);
     return (
         <div>
@@ -35,7 +35,9 @@ function Blogs() {
             <div className="flex flex-wrap gap-4">
             {blogsLoading ? <CategorySkeleton /> : filteredBlogs?.length > 0 ? (
                 filteredBlogs.map((blog, index) => (
-                    <BlogCard key={index} id={blog._id}
+                    <BlogCard 
+                        key={index} 
+                        id={blog._id}
                         title={blog.title}
                         content={blog.content}
                         createdAt={blog.createdAt}
@@ -45,7 +47,8 @@ function Blogs() {
                         authorName={blog.authorName}
                         authorImage={blog.authorImage}
                         likes={blog.likes}
-                        pinned={blog.pinned} />
+                        pinned={blog.pinned} 
+                        />
                 ))
             ) : (
                 <p>No blogs found</p>

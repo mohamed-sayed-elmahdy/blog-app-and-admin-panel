@@ -8,7 +8,7 @@ export default function CategoriesTabs({categories, selectedCategory, onCategory
     <div role="tablist" aria-label="Blog category filters" className="flex flex-wrap justify-start gap-3 mb-6">
       {categories?.length > 0 && categories.map((category, idx) => (
         <button
-          key={category[locale]} 
+          key={category["en"] + idx} 
           type="button"
           aria-label={`Filter by ${category[locale]}`}
           aria-selected={selectedCategory === category[locale]}
