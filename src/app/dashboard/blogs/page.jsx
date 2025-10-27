@@ -26,7 +26,7 @@ function Blogs() {
     console.log(categories, blogs, filteredBlogs);
     return (
         <div>
-            {categoriesLoading ? <CategorySkeleton /> : <CategoriesTabs style="justify-start" categories={categories} selectedCategory={selectedCategory} onCategorySelect={handleCategoryClick} />}
+            {categoriesLoading ? <CategorySkeleton style="justify-start" /> : <CategoriesTabs style="justify-start" categories={categories} selectedCategory={selectedCategory} onCategorySelect={handleCategoryClick} />}
             <div className="mt-6">
                 {selectedCategory !== "All" ? (
                     <p className="text-[var(--text)] text-2xl my-4 capitalize font-bold">Showing blogs for category: {selectedCategory}</p>
@@ -35,7 +35,7 @@ function Blogs() {
                 )}
             </div>
             <div className="flex flex-wrap gap-4">
-            {blogsLoading ? <CategorySkeleton /> : filteredBlogs?.length > 0 ? (
+            {blogsLoading ? <CategorySkeleton style="justify-start" /> : filteredBlogs?.length > 0 ? (
                 filteredBlogs.map((blog, index) => (
                     <BlogCard 
                         key={index} 

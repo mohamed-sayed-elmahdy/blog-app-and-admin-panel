@@ -27,9 +27,9 @@ function LatestBlogSection() {
     console.log(categories, blogs, filteredBlogs);
     return (
         <div className="max-w-[var(--max-width)] justify-center items-center">
-            {categoriesLoading ? <CategorySkeleton /> : <CategoriesTabs style="justify-center" categories={categories} selectedCategory={selectedCategory} onCategorySelect={handleCategoryClick} />}
-            <div className="flex flex-wrap gap-4 justify-start items-center">
-            {blogsLoading ? <CategorySkeleton /> : filteredBlogs?.length > 0 ? (
+            {categoriesLoading ? <CategorySkeleton style="justify-center mb-6" /> : <CategoriesTabs style="justify-center" categories={categories} selectedCategory={selectedCategory} onCategorySelect={handleCategoryClick} />}
+            <div className="flex flex-wrap gap-4 justify-center items-center">
+            {blogsLoading ? <CategorySkeleton style="justify-center " /> : filteredBlogs?.length > 0 ? (
                 filteredBlogs.map((blog, index) => (
                     <BlogCard 
                         key={index} 
