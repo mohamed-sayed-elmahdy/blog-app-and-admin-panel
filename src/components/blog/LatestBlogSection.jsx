@@ -5,7 +5,7 @@ import ButtonLink from "@/components/ui/ButtonLink";
 import CategoriesTabs from "@/components/blog/CategoriesTabs";
 import { useFetchCategories } from "@/hooks/useFetchCategories";
 import { useFetchBlogs } from "@/hooks/useFetchBlogs";
-
+import CategorySkeleton from "@/components/skeleton/blogsSkeleton/CategorySkeleton";
 function LatestBlogSection() {
 
   const [selectedCategory, setSelectedCategory] = useState("All");
