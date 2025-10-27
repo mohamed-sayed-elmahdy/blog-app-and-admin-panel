@@ -3,7 +3,7 @@ import React from 'react'
 import { useParams } from 'next/navigation'
 import { useBlogById } from '@/hooks/useBlogById'
 import { useLocale } from 'next-intl';
-function page() {
+function Page() {
     const { id } = useParams();
     const locale = useLocale();
     const { data: blog, isLoading, error } = useBlogById(id);
@@ -17,4 +17,4 @@ function page() {
   )
 }
 
-export default page
+export default Page;
