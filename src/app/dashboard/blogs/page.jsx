@@ -5,10 +5,8 @@ import CategorySkeleton from "@/components/skeleton/blogsSkeleton/CategorySkelet
 import { useFetchCategories } from "@/hooks/useFetchCategories";
 import { useFetchBlogs } from "@/hooks/useFetchBlogs";
 import { useState, useCallback } from "react";
-import { useLocale } from "next-intl";
 
 function Blogs() {
-    const locale = useLocale();
     const { data: categories, isLoading: categoriesLoading, error: categoriesError } = useFetchCategories();
     const { data: blogs, isLoading: blogsLoading, error: blogsError } = useFetchBlogs();
     const [selectedCategory, setSelectedCategory] = useState("All");
@@ -21,6 +19,10 @@ function Blogs() {
         return <p>No categories found</p>;
     }
     if (categoriesError) return <p>Can&#39;t load categories</p>;
+    if (!blogsLoading && (!blogs || blogs.length === 0)) {
+        return <p>No blogs found</p>;
+    }
+    if (blogsError) return <p>Can&#39;t load blogs</p>;
     console.log(categories, blogs, filteredBlogs);
     return (
         <div>
