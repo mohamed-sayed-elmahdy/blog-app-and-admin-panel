@@ -1,11 +1,11 @@
 import { useLocale } from "next-intl";
 
-export default function CategoriesTabs({categories, selectedCategory, onCategorySelect }) {
+export default function CategoriesTabs({categories, selectedCategory, onCategorySelect, style }) {
 
   let locale = useLocale();
 
   return (
-    <div role="tablist" aria-label="Blog category filters" className="flex flex-wrap justify-start gap-3 mb-6">
+    <div role="tablist" aria-label="Blog category filters" className={`flex flex-wrap ${style} gap-3 mb-6`}>
       {categories?.length > 0 && categories.map((category) => (
         <button
           key={category["en"]} 

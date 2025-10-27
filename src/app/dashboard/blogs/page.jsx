@@ -26,7 +26,7 @@ function Blogs() {
     console.log(categories, blogs, filteredBlogs);
     return (
         <div>
-            {categoriesLoading ? <CategorySkeleton /> : <CategoriesTabs categories={categories} selectedCategory={selectedCategory} onCategorySelect={handleCategoryClick} />}
+            {categoriesLoading ? <CategorySkeleton /> : <CategoriesTabs style="justify-start" categories={categories} selectedCategory={selectedCategory} onCategorySelect={handleCategoryClick} />}
             <div className="mt-6">
                 {selectedCategory !== "All" ? (
                     <p className="text-[var(--text)] text-2xl my-4 capitalize font-bold">Showing blogs for category: {selectedCategory}</p>
