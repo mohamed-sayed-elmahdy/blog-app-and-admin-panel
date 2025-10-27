@@ -12,7 +12,7 @@
     "categories": [
       {
         "en": "JavaScript",
-        "ar": "JavaScript"
+        "ar": "جافاسكريبت"
       }
     ],
     "tags": [
@@ -105,7 +105,10 @@
       "en": "What is a closure in JavaScript?",
       "ar": "ما هو الـ closure في JavaScript؟"
     },
-    "codeSnippetQuestion": {"code": "", "lang": ""},
+    "codeSnippetQuestion": {
+      "code": "",
+      "lang": ""
+    },
     "examples": [],
     "media": {
       "image": "",
@@ -127,13 +130,16 @@
       }
     ],
     "answer": {
-      "en": "",
-      "ar": "",
+      "en": "\n\n**Answer:**\n\nA **closure** in JavaScript is a **combination of a function and the lexical environment in which that function was declared**.  \nIn simpler terms, a closure allows a function to **remember and access variables from its outer (enclosing) scope**, even after that outer function has finished executing.\n\n---\n\n### **Understanding Lexical Environment**\n\nIn JavaScript, there’s something called a **lexical environment**, and that’s the **reason closures exist** and work the way they do.\n\nA **lexical environment** is an **internal object created by the JavaScript engine** whenever a **function or block** is executed.  \nThis object **stores all the variables and functions** that belong to that particular **scope** — whether it’s a function scope or block scope.\n\nNow, when we **create an inner function inside another function**, a **new lexical environment** is created for the inner one.  \nBut here’s the key point:\n\n> The new inner lexical environment **keeps a reference** (not a copy) to the **outer lexical environment** where it was defined.\n\nThat means the inner function can still **access the variables** of its parent function — even after the parent function has finished executing.\n\n---\n\n### **Example: Basic Closure**\n\n```javascript\nfunction outer() {\n  let count = 0;\n\n  function inner() {\n    count++;\n    console.log(count);\n  }\n\n  return inner;\n}\n\nconst counter = outer();\ncounter(); // 1\ncounter(); // 2\n```\n\n---\n\n### **Step-by-Step Explanation**\n\n1. When `outer()` runs, a **lexical environment** is created that contains `{ count: 0 }`.\n2. The `inner()` function is created **inside** that environment, so it gets a **reference** to it.\n3. When `outer()` returns `inner`, we still have access to that same lexical environment — even though `outer()` has finished execution.\n4. Each time `counter()` is called, it accesses and updates the `count` variable inside that preserved environment.\n\nThat relationship — where a function “remembers” the variables from the scope it was created in — is exactly what we call a **closure**.\n\n---\n\n### **So now we can say that:**\n\nA **closure** in JavaScript is **a combination of a function and the lexical environment in which that function was declared**.  \nIn simpler terms, a closure allows a function to **remember and access variables from its outer scope**, even after that outer function has finished executing.\n\n---\n\n### **Key Takeaways**\n\n* Every function or block creates its own **lexical environment**.  \n* Inner functions **keep references** to their parent environments.  \n* The **chain of environments** forms the **closure** mechanism.  \n* Closures enable you to:\n  * Keep data **private**\n  * Maintain **state** between function calls\n  * Write **modular** and **encapsulated** code\n\n---",
+      "ar": "\n\n**الاجابة:**\n\nA **Closure** في JavaScript هو **مزيج من function والـ lexical environment** اللي اتعرفت فيها الـ function دي.  \nببساطة، الـ closure بيسمح للـ function إنها **تفتكر وتوصل للمتغيرات** اللي في الـ **outer scope** بتاعها حتى بعد ما الـ function الأب خلصت تنفيذها.\n\n---\n\n### **فهم الـ Lexical Environment**\n\nفي JavaScript في حاجة اسمها **lexical environment**، ودي السبب اللي بيخلي الـ closure موجود ويشتغل بالطريقة دي.\n\nالـ **lexical environment** هو **object داخلي بيعمله الـ JavaScript engine** كل مرة **function أو block** بيتنفذ.  \nالـ object ده بيحتوي على **كل المتغيرات والـ functions** اللي بتخص الـ **scope** ده — سواء كان function scope أو block scope.\n\nلما بنعمل **inner function جوه function تانية**، بيتخلق **lexical environment جديد** للـ inner function.  \nبس المهم هنا:\n\n> الـ inner lexical environment **بيحتفظ بـ reference** (مش نسخة) للـ **outer lexical environment** اللي اتعرف فيه.\n\nوده معناه إن الـ inner function تقدر **توصل للمتغيرات** بتاعة الـ parent function حتى بعد ما الـ parent خلصت.\n\n---\n\n### **مثال على الـ Closure**\n\n```javascript\nfunction outer() {\n  let count = 0;\n\n  function inner() {\n    count++;\n    console.log(count);\n  }\n\n  return inner;\n}\n\nconst counter = outer();\ncounter(); // 1\ncounter(); // 2\n```\n\n---\n\n### **الشرح خطوة بخطوة**\n\n1. لما `outer()` بتشتغل، بيتخلق **lexical environment** فيه `{ count: 0 }`.\n2. الـ `inner()` function بتتخلق **جوه** البيئة دي، فبالتالي بتاخد **reference** ليها.\n3. لما `outer()` بترجع `inner`، إحنا لسه عندنا وصول لنفس الـ environment دي — حتى بعد ما `outer()` خلصت.\n4. كل مرة `counter()` بتتستدعى، بتعدل وتستخدم نفس المتغير `count` اللي محفوظ في البيئة دي.\n\nالعلاقة دي — اللي فيها function بتفتكر المتغيرات اللي كانت في الـ scope اللي اتخلقت فيه — هي بالظبط اللي بنسميها **closure**.\n\n---\n\n### **نقدر نقول إن:**\n\nالـ **closure** في JavaScript هو **مزيج من function والـ lexical environment اللي اتعرفت فيها**.  \nببساطة، الـ closure بيسمح للـ function إنها **تفتكر وتستخدم المتغيرات الخارجية** حتى بعد ما الـ parent function تخلص.\n\n---\n\n### **أهم النقاط**\n\n* كل function أو block بيخلق **lexical environment** خاص بيه.  \n* الـ inner functions **بتحتفظ بـ references** للـ parent environments.  \n* السلسلة دي من الـ environments هي اللي بتكوّن **الـ closure mechanism**.  \n* الـ closure بيساعدك في:\n  * تخلي الداتا **private**\n  * تحافظ على **state** بين الـ function calls\n  * تكتب كود **modular** و **منظم أكتر**\n\n---",
       "hints": {
         "en": [],
         "ar": []
       },
-      "codeSnippetAnswer": {"code": " ", "lang": ""}
+      "codeSnippetAnswer": {
+        "code": " ",
+        "lang": ""
+      }
     },
     "evaluation": {
       "points": 5,
@@ -166,13 +172,13 @@
     "categories": [
       {
         "en": "JavaScript",
-        "ar": "JavaScript"
+        "ar": "جافاسكريبت"
       }
     ],
     "tags": [
       {
         "en": "arrow function, JavaScript",
-        "ar": "arrow function, JavaScript"
+        "ar": "arrow function, جافاسكريبت"
       }
     ],
     "question": {

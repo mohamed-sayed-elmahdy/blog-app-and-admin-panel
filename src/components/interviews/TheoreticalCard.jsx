@@ -3,14 +3,14 @@
 import QuestionTypeIcon from "@/components/interviews/QuestionTypeIcon";
 import AnswerMarkdownRenderer from "@/components/interviews/AnswerMarkdownRenderer";
 import { useState } from "react";
-
+import { useLocale } from "next-intl";
 
 
 
 export default function TheoreticalCard({ question }) {
     const [showAnswer, setShowAnswer] = useState(false);
     const [answerInput, setAnswerInput] = useState(false);
-
+    const locale = useLocale();
 
     const handleShowAnswer = () => {
         setShowAnswer(!showAnswer);
@@ -33,17 +33,17 @@ export default function TheoreticalCard({ question }) {
                             <QuestionTypeIcon type="theoretical" />
                         </div>
                         <span className="bg-primary/10 text-primary capitalize text-sm rounded-full font-medium">
-                            {question?.type["en"] || "Theoretical"}
+                            {question?.type[locale] || "Theoretical"}
                         </span>
                         <span className="px-3  py-1 capitalize bg-muted text-muted-foreground text-sm rounded-full">
-                            {question?.difficulty["en"] || "Intermediate"}
+                            {question?.difficulty[locale] || "Intermediate"}
                         </span>
                         <span className="px-3 py-1 bg-accent text-accent-foreground text-sm rounded-full">
                             {question?.evaluation?.points || 15} Points
                         </span>
                     </div>
                     <h2 className="text-xl font-semibold my-4">
-                        {question?.question["en"] || "Explain the concept of closures in JavaScript with an example."}
+                        {question?.question[locale] || "Explain the concept of closures in JavaScript with an example."}
                     </h2>
                 </div>
             </div>
@@ -100,7 +100,7 @@ export default function TheoreticalCard({ question }) {
                             Close
                         </button>
                     </div>
-                <AnswerMarkdownRenderer content={question?.answer?.en} />
+             {question?.answer?.[locale] ? <AnswerMarkdownRenderer content={question?.answer?.[locale]} /> : <p>No answer available</p>}
             </div>
             {/* Action Buttons */}
             <div className="flex items-center justify-between">

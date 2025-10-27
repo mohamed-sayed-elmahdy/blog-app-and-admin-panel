@@ -48,6 +48,7 @@ function Blogs() {
                         authorImage={blog.authorImage}
                         likes={blog.likes}
                         pinned={blog.pinned} 
+                        path={`/dashboard/blogs/${blog._id}`}
                         />
                 ))
             ) : (

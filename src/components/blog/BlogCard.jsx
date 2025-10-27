@@ -18,6 +18,7 @@ function BlogCard({
   authorImage,
   likes,
   pinned,
+  path,
 }) {
 
   const locale = useLocale();
@@ -88,7 +89,7 @@ function BlogCard({
       </div>
 
       <Link
-        href={`/blogs/${id}`}
+        href={path}
         className="block"
         aria-label={`Read more about ${title[locale]}`}
         title={title[locale]}

@@ -3,7 +3,7 @@
 // import BlogCard from "@/components/blog/BlogCard";
 // import { blog_data } from "@/assets/assets";
 // import ButtonLink from "@/components/ui/ButtonLink";
-// import {CategoriesTabs} from "@/components/blog/CategoriesTabs";
+// import CategoriesTabs from "@/components/blog/CategoriesTabs";
 
 // function LatestBlogSection() {
 
@@ -46,6 +46,7 @@
 //               author_img={blog.author_img}
 //               likes={blog.likes}
 //               pinned={blog.pinned}
+//               path={`/blogs/${blog.id}`}
 //             />
 //           ))
 //         ) : (

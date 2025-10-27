@@ -39,7 +39,7 @@ export default function CodeBlock({ language, value, theme }) {
         language={language}
         showLineNumbers
         PreTag="div"
-        className={`!rounded-xl border border-gray-800 !p-3 !text-base`}
+        className={`!rounded-xl [direction:ltr] border border-gray-800 !p-3 !text-base`}
       >
         {value}
       </SyntaxHighlighter>
