@@ -1,6 +1,7 @@
 import ReactMarkdown from "react-markdown";
 import CodeBlock from "@/components/interviews/CodeBlock";
-
+import rehypeRaw from "rehype-raw";
+import rehypeSanitize from "rehype-sanitize";
 function Button({ children }) {
   return (
     <button className="bg-blue-500 text-white px-3 py-1 rounded">
@@ -12,6 +13,7 @@ function Button({ children }) {
 export default function MarkdownRenderer({ content }) {
   return (
     <ReactMarkdown
+    rehypePlugins={[rehypeRaw, rehypeSanitize] }
       components={{
         code({ node, inline, className, children, ...props }) {
           const match = /language-(\w+)/.exec(className || "");

@@ -225,6 +225,7 @@ const Sidebar = React.forwardRef((
     </div>
   );
 })
+
 Sidebar.displayName = "Sidebar"
 
 const SidebarTrigger = React.forwardRef(({ className, onClick, ...props }, ref) => {

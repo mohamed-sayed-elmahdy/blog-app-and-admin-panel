@@ -27,6 +27,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
+import { useLocale } from "next-intl";
 
 const data = {
   user: {
@@ -179,8 +180,9 @@ const data = {
 export function AppSidebar({
   ...props
 }) {
+  const locale = useLocale();
   return (
-    <Sidebar variant="inset" {...props}>
+    <Sidebar variant="inset" {...props} side ={locale === "ar" ? "right" : "left"}>
       <SidebarHeader>
         <SidebarMenu>
           <SidebarMenuItem>

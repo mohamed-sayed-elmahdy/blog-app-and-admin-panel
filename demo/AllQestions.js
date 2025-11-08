@@ -135,6 +135,7 @@ const jsQuestions = [
     { id: 47, level: "Intermediate", question: "What is the difference between the temporal dead zone and hoisting?" },
     { id: 48, level: "Intermediate", question: "What is an IIFE (Immediately Invoked Function Expression) and how is it different from a regular function?" },
     { id: 49, level: "Intermediate", question: "What is event bubbling?" },
+    
     { id: 50, level: "Intermediate", question: "What is event capturing (trickling)?" },
     { id: 51, level: "Intermediate", question: "What is the difference between stopPropagation and stopImmediatePropagation?" },
     { id: 52, level: "Intermediate", question: "What is the difference between preventDefault and stopPropagation?" },

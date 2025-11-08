@@ -35,7 +35,7 @@ export default async function RootLayout({ children }) {
   const { locale, messages } = await getMessagesOnce();
 
   return (
-    <html lang={locale} suppressHydrationWarning>
+    <html lang={locale} dir={locale === "ar" ? "rtl" : "ltr"} suppressHydrationWarning >
       <body className={`${outfit.className} antialiased suppressHydrationWarning`}>
         <NextIntlClientProvider messages={messages}>
           <AppProviders>{children}</AppProviders>

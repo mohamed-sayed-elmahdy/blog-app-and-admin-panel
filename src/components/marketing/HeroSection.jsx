@@ -59,13 +59,13 @@ export default function HeroSection() {
             <div className="bg-[var(--bg-blur)] dark:border-[1.69px] border-[1px] border-[var(--border-blur)] backdrop-blur-[25px] rounded-3xl p-6  shadow-md shadow-white/10 max-w-[550px] sm:mx-auto lg:ms-auto lg:me-[initial] transform rotate-2 hover:rotate-0 transition-all duration-300">
               {/* Header */}
               <div className="relative z-10 flex items-center justify-between mb-6">
-                <div className="flex items-center space-x-2">
+                <div className="flex items-center space-x-2 rtl:space-x-reverse">
                   <div className="w-3 h-3 bg-[var(--text)] rounded-sm" />
                   <span className="font-semibold text-[var(--text)]">
                     Company Co.
                   </span>
                 </div>
-                <div className="flex items-center space-x-2 text-sm text-[var(--text-muted)]">
+                <div className="flex items-center space-x-2 rtl:space-x-reverse text-sm text-[var(--text-muted)]">
                   <span>Live preview</span>
                   <div className="w-2 h-2 bg-[var(--bg-green)] rounded-full animate-[pulse_1.8s_ease-in-out_infinite]" />
                 </div>
@@ -107,7 +107,7 @@ export default function HeroSection() {
                     Last 7 days
                   </span>
                 </div>
-                <div className="h-24 flex items-end space-x-1">
+                <div className="h-24 flex items-end space-x-1 rtl:space-x-reverse">
                   {[40, 65, 45, 80, 55, 70, 85].map((height, i) => (
                     <div
                       key={i}
@@ -138,7 +138,7 @@ export default function HeroSection() {
                 ].map(({ name, status, time, gradient, initial }, i) => (
                   <div
                     key={i}
-                    className="flex items-center space-x-3 p-2 rounded-lg border-[1.89px] bg-[var(--bg-card)] border-[var(--border-soft)]"
+                    className="flex items-center space-x-3 rtl:space-x-reverse p-2 rounded-lg border-[1.89px] bg-[var(--bg-card)] border-[var(--border-soft)]"
                   >
                     <div
                       className={`w-8 h-8 bg-gradient-to-br ${gradient} rounded-full flex items-center justify-center text-[var(--text)] text-sm font-semibold`}
@@ -168,7 +168,7 @@ export default function HeroSection() {
           <p className="text-[var(--text-muted)] mb-8 text-sm">
             Clearbit is behind the world&apos;s fastest-growing companies
           </p>
-          <div className="flex justify-center items-center flex-wrap space-x-12 opacity-60">
+          <div className="flex justify-center items-center flex-wrap space-x-12 rtl:space-x-reverse opacity-60">
             <div className="text-[var(--text-muted)] font-semibold text-lg">
               Segment
             </div>
