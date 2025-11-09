@@ -21,6 +21,7 @@ export default function MarkdownRenderer({ content }) {
             <CodeBlock
               language={match[1]}
               value={String(children).replace(/\n$/, "")}
+              style={"my-4"}
            
             />
           ) : (

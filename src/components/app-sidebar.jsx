@@ -182,7 +182,7 @@ export function AppSidebar({
 }) {
   const locale = useLocale();
   return (
-    <Sidebar variant="inset" {...props} side ={locale === "ar" ? "right" : "left"}>
+    <Sidebar variant="inset" {...props} side={locale === "ar" ? "right" : "left"}>
       <SidebarHeader>
         <SidebarMenu>
           <SidebarMenuItem>
@@ -199,6 +199,7 @@ export function AppSidebar({
               </a>
             </SidebarMenuButton>
           </SidebarMenuItem>
+          
         </SidebarMenu>
       </SidebarHeader>
       <SidebarContent>

@@ -5,8 +5,8 @@ import { MdContentCopy } from "react-icons/md";
 import { oneDark, coldarkDark ,funky, duotoneDark, a11yDark, vscDarkPlus, synthwave84, materialDark, nord, shadesOfPurple, solarizedDarkAtom, darcula} from "react-syntax-highlighter/dist/esm/styles/prism";
 import { IoIosColorPalette } from "react-icons/io";
 
-export default function CodeBlock({ language, value, theme }) {
-    const [themes, setThemes] = useState([funky, oneDark, coldarkDark, duotoneDark, a11yDark, vscDarkPlus, synthwave84, nord, shadesOfPurple, solarizedDarkAtom, darcula]);
+export default function CodeBlock({ style, language, value, theme }) {
+    const [themes, setThemes] = useState([ oneDark, coldarkDark, duotoneDark, a11yDark, vscDarkPlus, synthwave84, nord, shadesOfPurple, solarizedDarkAtom, darcula]);
     const [themeIndex, setThemeIndex] = useState(0);
 
     const handleThemeChange = () => {
@@ -21,7 +21,7 @@ export default function CodeBlock({ language, value, theme }) {
   };
 
   return (
-    <div className="relative my-4">
+    <div className={`relative ${style}`}>
       <button
         onClick={copyToClipboard}
         className="absolute right-2 top-2 bg-gray-700 text-white px-2 py-1 text-sm rounded"
@@ -34,13 +34,15 @@ export default function CodeBlock({ language, value, theme }) {
       >
         <IoIosColorPalette />
       </button>
+ 
       <SyntaxHighlighter
         style={themes[themeIndex]}
         language={language}
         showLineNumbers
         PreTag="div"
-        className={`!rounded-xl [direction:ltr] border border-gray-800 !p-3 !text-base`}
+        className={`!rounded-md [direction:ltr] border border-gray-800 !p-3 !text-base`}
       >
+
         {value}
       </SyntaxHighlighter>
     </div>

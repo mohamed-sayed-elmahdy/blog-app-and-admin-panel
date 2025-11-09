@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 :root {
-  /* 🌙 Dark Mode (Default) */
   --white: rgba(255, 255, 255);
   --black: rgba(0, 0, 0);
   --bg-blur: rgba(0, 0, 0, 0.05);
@@ -17,14 +16,16 @@
   --btn-border: rgba(255, 255, 255, 0.2);
   --btn-border-hover: rgba(255, 255, 255, 0.3);
   --btn-bg-hover: rgba(255, 255, 255, 0.04);
+  --bg-white: rgba(255, 255, 255);
+  --bg-black: rgba(0, 0, 0);
   --bg-green: #16a34a;
+   --question-codeBg: #292a2c;
+  --question-textarea: #292a2c;
   --text-green: #4ade80;
   --bg-card: rgba(255, 255, 255, 0.05);
   --border-soft: rgba(255, 255, 255, 0.1);
   --black-text: rgba(0, 0, 0);
   --white-text: rgba(255, 255, 255);
-  --bg-white: rgba(255, 255, 255);
-  --bg-black: rgba(0, 0, 0);
   --white-border: rgba(255, 255, 255);
   --text-gray-400: #9ca3af;
   --max-width: 1480px;
@@ -50,11 +51,10 @@
   /* like and save buttons */
   --like-blue-dark: #2563eb;
   --save-blue-light: #38bdf8;
-
+  --test: rgba(217.2 91.2% 9.8%);
 }
 
 .light {
-  /* ☀️ Light Mode */
   --white: rgba(0, 0, 0);
   --black: rgba(255, 255, 255);
   --bg-blur: rgba(255, 255, 255, 0.05);
@@ -68,14 +68,16 @@
   --btn-border: rgba(0, 0, 0, 0.2);
   --btn-border-hover: rgba(0, 0, 0, 0.3);
   --btn-bg-hover: rgba(0, 0, 0, 0.04);
+  --bg-white: rgba(0, 0, 0);
+  --bg-black: rgba(255, 255, 255);
   --bg-green: #16a34a;
+   --question-codeBg: #e5e7eb;
+   --question-textarea: #e5e7eb;
   --text-green: #4ade80;
   --bg-card: rgba(255, 255, 255, 0.05);
   --border-soft: rgba(0, 0, 0, 0.1);
   --black-text: rgba(255, 255, 255);
   --white-text: rgba(0, 0, 0);
-  --bg-white: rgba(0, 0, 0);
-  --bg-black: rgba(255, 255, 255);
   --white-border: rgba(0, 0, 0);
   --text-gray-400: #4b5563;
   --accent-color: #00ffff;
@@ -98,6 +100,85 @@
   /* Like and Save Buttons */
   --like-blue-dark: #3b82f6;
   --save-blue-light: #0284c7;
+
+}
+
+
+@layer base {
+  :root {
+
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --radius: 0.5rem;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+
+  }
+
+  .dark {
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+  }
+}
+
+
+
+
+@layer base {
+  * {
+    @apply border-border;
+
+  }
+
+  body {
+    @apply bg-background text-foreground;
+
+  }
+
 }
 
 
@@ -163,94 +244,4 @@ html[lang="en"] {
 
 html[lang="ar"] .rtl-flip {
   transform: rotate(180deg);
-}
-
-
-
-
-
-@layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 3.9%;
-    --primary: 0 0% 9%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 0 0% 96.1%;
-    --secondary-foreground: 0 0% 9%;
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 0 0% 45.1%;
-    --accent: 0 0% 96.1%;
-    --accent-foreground: 0 0% 9%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
-    --ring: 0 0% 3.9%;
-    --radius: 0.5rem;
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-
-  }
-  .dark {
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
-    --ring: 0 0% 83.1%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-
-  }
-
-}
-
-
-
-
-
-@layer base {
-  * {
-    @apply border-border;
-
-  }
-  body {
-    @apply bg-background text-foreground;
-
-  }
-
 }

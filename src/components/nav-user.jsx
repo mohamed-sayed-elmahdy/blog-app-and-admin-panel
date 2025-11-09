@@ -13,7 +13,7 @@ import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from "@/components/ui/avatar"
+} from "@/components/ui/Avatar"
 import {
   DropdownMenu,
   DropdownMenuContent,
