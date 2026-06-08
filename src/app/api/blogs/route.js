@@ -6,26 +6,41 @@ import { generateUniqueSlug } from '@/utils/generateSlug';
 // import { verifyToken } from "@/lib/auth/verifyToken";
 
 export async function GET(request) {
-    await connectDB();
-    const blogs = await Blog.find();
+    try {
+        await connectDB();
+        const blogs = await Blog.find();
+        if (!blogs) {
+            return NextResponse.json(
+                { success: false, message: "Blogs not found" },
+                { status: 404 }
+            );
+        }
 
-    return NextResponse.json({ blogs: blogs, ok: true, message: "Blogs fetched successfully" });
+        return NextResponse.json({ success: true, message: "Blogs Fetched successfully", blogs });
+    }
+    catch (error) {
+        return NextResponse.json(
+            { success: false, message: error.message },
+            { status: 500 }
+        );
+    }
 }
 
 
 export async function POST(request) {
     try {
-        await connectDB(); 
+        await connectDB();
         // verify user token(temporary object)
         const data = await request.formData();
         // const decoded = await verifyToken(req);
         const userJson = data.get("user") ? JSON.parse(data.get("user")) : null;
         // const user = await User.findById(decoded.id);
-        const user = userJson || { id: "", username: "", role: "", profileImage: "" };
-        // check if user is admin
-        if (!user) {
+        if (!userJson) {
             return NextResponse.json({ error: "User not found" }, { status: 403 });
         }
+        const user = userJson;
+
+        // check if user is admin
         if (user.role !== "admin") {
             return NextResponse.json({ error: "Unauthorized - Admin only" }, { status: 403 });
         }
@@ -48,19 +63,19 @@ export async function POST(request) {
             return NextResponse.json({ error: `Missing required fields: ${missingFields.join(", ")}` }, { status: 400 });
         }
 
-       const blogImage = data.get("blogImage");
-       let imageUrl = null;
+        const blogImage = data.get("blogImage");
+        let imageUrl = null;
 
         if (blogImage) {
 
-        // لو File
-        if (blogImage instanceof File) {
-        imageUrl = await uploadImageToCloudinary(blogImage, "blogs");
-        }
-        // لو String URL
-        else if (typeof blogImage === "string") {
-          imageUrl = blogImage;
-         }
+            // لو File
+            if (blogImage instanceof File) {
+                imageUrl = await uploadImageToCloudinary(blogImage, "blogs");
+            }
+            // لو String URL
+            else if (typeof blogImage === "string") {
+                imageUrl = blogImage;
+            }
         }
         const authorImage =
             user.profileImage ||
@@ -93,20 +108,11 @@ export async function POST(request) {
         };
         const blog = await Blog.create(blogData);
         // return response
-        return NextResponse.json({ blog, success: true, message: "Blog created successfully" });
+        return NextResponse.json({ success: true, message: "Blog created successfully", blog });
     }
 
     catch (error) {
         return NextResponse.json({ success: false, message: error.message || "Failed to create blog" }, { status: 500 });
     }
 }
-
-        // const path = `public/${Date.now()}-${blogImage.name}`;
-        // const arrayBuffer = await file.arrayBuffer();
-        // const buffer = Buffer.from(arrayBuffer);
-        // const imageBuffer = Buffer.from(imageByteData);
-        // const title = data.get("title");
-        // const content = data.get("content");
-        // const status = data.get("status") || "draft"; 
-        // const publishedAt = status === "published" ? new Date() : undefined;
 

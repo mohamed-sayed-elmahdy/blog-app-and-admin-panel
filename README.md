@@ -1,7 +1,7 @@
-# Blog Application with Admin Panel
+# Frontend Forge platform with Admin Panel
 
 ## Project Description
-A full-stack blog application built with Next.js featuring a public-facing blog and an admin panel for content management. The project serves as a complete blogging platform with user authentication, content creation, and management capabilities.
+A full-stack blog application built with Next.js featuring a public-facing blog, user dashboard, and admin panel for content management. The project includes multiple learning resources, interview preparation tools, and content management capabilities.
 
 ## Installation & Setup Instructions
 1. Clone the repository
@@ -10,165 +10,205 @@ A full-stack blog application built with Next.js featuring a public-facing blog 
 4. Open http://localhost:3000 to view the application
 
 ## Tech Stack
-- Frontend: Next.js, React, Tailwind CSS
-- Backend: Next.js API routes
-- Database: (To be added based on your setup)
-- Authentication: (To be added based on your setup)
+- **Frontend:** Next.js 15, React 18, Tailwind CSS, Motion (animations)
+- **Backend:** Next.js API routes
+- **Database:** MongoDB with Mongoose
+- **Image Management:** Cloudinary
+- **UI Libraries:** Radix UI, Lucide React, React Icons
+- **Internationalization:** next-intl
+- **Forms & Validation:** React Hook Form
+- **Data Fetching:** TanStack React Query
+- **Styling:** Tailwind CSS with class-variance-authority
 
 ## Folder Structure
 ```
 blog-app-and-admin-panel/
-├── src/               # Source code directory
-│   ├── app/           # Next.js app router (new Next.js 13+ structure)
-│   │   ├── admin/   # Admin routes and pages (grouped route)
-│   │   │   └── dashboard/  # Admin dashboard section   
-│   │   │       ├── layout.jsx   # Admin dashboard layout component
-│   │   │       ├── page.jsx     # Admin dashboard main page
-│   │   │       └── .....        # Other admin dashboard pages
-│   │   ├── dashboard/       # User routes and pages (grouped route)
-│   │   │   ├── layout.jsx   # Dashboard layout component
-│   │   │   ├── page.jsx     # Dashboard main page
-│   │   │   └── .....        # Other dashboard pages
-│   │   ├── (public)/  # Public routes and pages (grouped route)
-│   │   │   ├── (marketing)/  # Marketing-related pages
-│   │   │   │   ├── about/    # About page section
-│   │   │   │   │   └── page.jsx  # About page component
-│   │   │   │   ├── contact/  # Contact page section
-│   │   │   │   │   └── page.jsx  # Contact page component
-│   │   │   │   └── page.jsx  # Marketing home page
-│   │   │   ├── blogs/       # Blog section
-│   │   │   │   ├── [id]/    # Dynamic blog post route
+├── src/                  # Source code directory
+│   ├── app/              # Next.js app router (Next.js 13+ structure)
+│   │   ├── (public)/     # Public routes group
+│   │   │   ├── (marketing)/  # Marketing pages
+│   │   │   │   └── page.jsx      # Marketing home page
+│   │   │   ├── blogs/
+│   │   │   │   ├── [id]/         # Dynamic blog post route
 │   │   │   │   │   └── page.jsx  # Individual blog post page
-│   │   │   │   └── page.jsx  # Blog listing page
-│   │   │   ├── layout.jsx   # Public section layout
-│   │   │   └── test/        # Test page section
-│   │   │       └── page.jsx  # Test page component
-│   │   ├── api/       # API routes for backend functionality
-│   │   │   ├── blogs/ 
-│   │   │   │   ├── route.js   
-│   │   │   │   └── [id]/ 
-│   │   │   │       └── route.js 
-│   │   │   ├── emails/
-│   │   │   │   ├── route.js
-│   │   │   │   └── [id]/
-│   │   │   │       └── route.js
-│   │   │   ├── interviews/
-│   │   │   └── test/
-│   │   │       └── route.js
-│   │   ├── auth/    # Authentication routes and pages
+│   │   │   │   └── page.jsx      # Blog listing page
 │   │   │   ├── login/
 │   │   │   │   └── page.jsx
-│   │   │   ├── logout/
+│   │   │   ├── signin/
 │   │   │   │   └── page.jsx
-│   │   │   ├── signup/
+│   │   │   ├── test/
 │   │   │   │   └── page.jsx
-│   │   │   ├── forgotPassword/
-│   │   │   │   └── page.jsx
-│   │   │   ├── resetPassword/
-│   │   │   │   └── page.jsx
-│   │   │   └── verify/
-│   │   │       └── page.jsx
-│   │   ├── favicon.ico # Site favicon displayed in browser tabs
-│   │   ├── globals.css # Global CSS styles for the entire application
-│   │   └── layout.jsx # Root layout component wrapping all pages admin and public
-│   ├── assets/        # Application assets for internal use
-│   │   └── ...        # Various icons, images, and UI elements
-│   ├── messages/      # Internationalization (i18n) messages
-│   │   ├── ar.json    # Arabic messages
-│   │   ├── en.json    # English messages
-│   ├── providers/     # React context providers
-│   │   ├── app-providers.jsx          # Application context provider for all Providers
-│   │   ├── auth-provider.jsx          # Authentication context provider
-│   │   ├── toast-provider.jsx         # Toast context provider
-│   │   └── theme-provider.jsx         # Theme context provider 
-│   ├── components/    # Reusable React components
-│   │   ├── admin/     # Admin panel specific components (currently empty)
-│   │   ├── dashboard/    # User dashboard components
-│   │   ├── blog/      # Blog-related components
-│   │   │   ├── BlogCard.jsx          # Blog post card component
-│   │   │   ├── CategoriesTabs.jsx    # Blog category navigation tabs
-│   │   │   └── LatestBlogSection.jsx # Featured/latest blog posts section
-│   │   ├── interviews/ # Interview question components
-│   │   │   └── LatestIntervQSection.jsx # Latest interview questions section
-│   │   ├── marketing/ # Marketing-related components
-│   │   │   ├── HeroSection.jsx       # Hero/banner section for landing pages
-│   │   │   └── NewsLetterSection.jsx # Email newsletter subscription section
-│   │   ├── shared/    # Shared/common components used across sections
-│   │   │   ├── NavLinks.jsx          # Navigation links component
-│   │   │   ├── PublicFooter.jsx      # Footer for public-facing pages
-│   │   │   ├── PublicHeader.jsx      # Header for public-facing pages
-│   │   │   └── ThemeSwitch.jsx       # Theme switcher component
-│   │   ├── skeleton/ # Skeleton components for loading states
-│   │   │   └── blogsSkeleton/ # Skeleton components for blogs
-│   │   │          ├── categorySkeleton.jsx # Skeleton component for category loading
-│   │   │          └── blogSkeleton.jsx # Skeleton component for blog loading
-│   │   │   
-│   │   └── ui/        # UI components and design system elements
-│   │       ├── Button.jsx            # Reusable button component
-│   │       ├── ButtonLink.jsx        # Button styled link component
-│   │       ├── Error.jsx             # Error display component
-│   │       ├── Loading.jsx           # Loading/spinner component
-│   │       ├── Toast.jsx             # Toast notification component
-│   │       ├── LightRays.jsx         # Light rays animation component
-│   │       ├── BlurText.jsx          # Blurred text animation component
-│   │       └── ...                   # Additional UI components   
-│   ├── i18n/         # Internationalization (i18n) configuration and messages
-│   │   ├── config.js  # i18next configuration
-│   │   ├── i18n-helper.js    # Helper function for fetching i18n messages once in layout  
-│   │   └── requests.js    # API requests for i18n messages   
-│   ├── lib/           # Utility functions and libraries
-│   │   ├── models     # Database models for MongoDB 
-│   │   │   ├── BlogModel.js # Blog model definition
-│   │   │   └── QuestionSchema.js # Question model definition
-│   │   ├── auth/ # Authentication utilities
-│   │   │   └── utils.js # functions for generating, verifying tokens and hashing passwords
-│   │   └── config/     # Configuration helpers
-│   │   │   ├── cloudinary.js # Cloudinary helper
-│   │   │   └── mongodb.js # MongoDB helper/connection
-│   └── utils/ # Utility functions and libraries
-│       ├── generateSlug.js # Slug generator helper
-│       └── uploadImage.js # Image upload helper
-| 
-├── .eslintrc.json     # ESLint configuration for code quality
-├── .gitignore         # Specifies files to ignore in Git
-├── README.md          # Project documentation (this file)
-├── TheSteps.MD        # Development steps and progress tracking
-├── jsconfig.json      # JavaScript configuration for the project
-├── next.config.mjs    # Next.js configuration settings
-├── package-lock.json  # Exact dependency versions lock file
-├── package.json       # Project metadata and dependencies
-├── postcss.config.mjs # PostCSS configuration for styling
-├── tailwind.config.js # Tailwind CSS customization
-├── .env.local         # Environment variables for configuration
-├── public/            # Static assets accessible from browser
-│   ├── file.svg       # File icon for UI elements
-│   ├── globe.svg      # Globe icon for UI elements
-│   ├── logo.png       # Main application logo
-│   ├── next.svg       # Next.js branding logo
-│   ├── vercel.svg     # Vercel branding logo
-│   └── window.svg     # Window icon for UI elements
+│   │   │   └── layout.jsx        # Public section layout
+│   │   ├── admin/        # Admin routes group
+│   │   │   └── dashboard/    # Admin dashboard
+│   │   │       ├── layout.jsx   # Admin dashboard layout
+│   │   │       └── page.jsx     # Admin dashboard page
+│   │   ├── dashboard/    # User routes group
+│   │   │   ├── layout.jsx       # Dashboard layout
+│   │   │   ├── page.jsx         # Dashboard main page
+│   │   │   ├── ai-assistant/    # AI Assistant section
+│   │   │   ├── best-practices/  # Best Practices section
+│   │   │   ├── blogs/           # User blogs section
+│   │   │   ├── bookmarks/       # Bookmarks section
+│   │   │   ├── challenges/      # Challenges section
+│   │   │   ├── cheat-sheets/    # Cheat Sheets section
+│   │   │   ├── documentation/   # Documentation section
+│   │   │   ├── feed/            # Feed section
+│   │   │   ├── how-to/          # How-to guides section
+│   │   │   ├── interviews/      # Interview prep section
+│   │   │   ├── mock-interviews/ # Mock interviews section
+│   │   │   ├── notes/           # Notes section
+│   │   │   ├── resume-review/   # Resume review section
+│   │   │   ├── roadmaps/        # Learning roadmaps section
+│   │   │   ├── settings/        # Settings section
+│   │   │   ├── tips-and-tricks/ # Tips & Tricks section
+│   │   │   ├── troubleshooting/ # Troubleshooting section
+│   │   │   └── tutorials/       # Tutorials section
+│   │   ├── api/          # API routes for backend functionality
+│   │   │   ├── blogs/        # Blog endpoints
+│   │   │   │   ├── route.js
+│   │   │   │   ├── categories/ # Blog categories
+│   │   │   │   └── [id]/      # Dynamic blog post endpoints
+│   │   │   ├── connections/   # Connections API
+│   │   │   ├── emails/        # Email API
+│   │   │   ├── interviews/    # Interview API
+│   │   │   └── test/          # Test API
+│   │   ├── auth/         # Authentication routes (placeholder for future implementation)
+│   │   ├── favicon.ico   # Site favicon
+│   │   ├── globals.css   # Global CSS styles
+│   │   └── layout.jsx    # Root layout component
+│   ├── components/       # Reusable React components
+│   │   ├── admin/        # Admin-specific components
+│   │   │   ├── AdminBreadcrumbs.jsx
+│   │   │   └── AdminSidebar.jsx
+│   │   ├── blog/         # Blog-related components
+│   │   │   ├── BlogCard.jsx              # Blog post card
+│   │   │   ├── CategoriesTabs.jsx        # Category navigation
+│   │   │   └── LatestBlogSection.jsx     # Latest blogs section
+│   │   ├── dashboard/    # Dashboard-specific components
+│   │   │   ├── app-sidebar.jsx
+│   │   │   ├── UserBreadcrumbs.jsx
+│   │   │   ├── routes.js
+│   │   │   ├── existingDashboardPages.js
+│   │   │   └── missingDashboardPages.js
+│   │   ├── interviews/   # Interview-related components
+│   │   │   ├── AnswerMarkdownRenderer.jsx
+│   │   │   ├── CodeBlock.jsx
+│   │   │   ├── LatestIntervQSection.jsx
+│   │   │   ├── QuestionTypeIcon.jsx
+│   │   │   └── TheoreticalCard.jsx
+│   │   ├── marketing/    # Marketing page components
+│   │   │   ├── HeroSection.jsx          # Hero banner section
+│   │   │   └── NewsLetterSection.jsx    # Newsletter signup section
+│   │   ├── shared/       # Shared/common components
+│   │   │   ├── NavLinks.jsx             # Navigation links
+│   │   │   ├── PublicFooter.jsx         # Footer component
+│   │   │   ├── PublicNavbar.jsx         # Navigation bar
+│   │   │   └── ThemeSwitch.jsx          # Theme toggle
+│   │   ├── dashboard-preview/
+│   │   │   └── dashboard-preview.jsx
+│   │   ├── skeleton/     # Skeleton loading components
+│   │   │   └── blogsSkeleton/
+│   │   ├── ui/           # Base UI components and design system
+│   │   │   ├── avatar.jsx
+│   │   │   ├── BlurText.jsx
+│   │   │   ├── breadcrumb.jsx
+│   │   │   ├── Button.jsx
+│   │   │   ├── ButtonLink.jsx
+│   │   │   ├── collapsible.jsx
+│   │   │   ├── dropdown-menu.jsx
+│   │   │   ├── Error.jsx
+│   │   │   └── input.jsx
+│   │   ├── nav-main.jsx
+│   │   ├── nav-projects.jsx
+│   │   ├── nav-secondary.jsx
+│   │   └── nav-user.jsx
+│   ├── hooks/            # Custom React hooks
+│   │   ├── useBlogById.js
+│   │   ├── useFetchBlogs.js
+│   │   ├── useFetchCategories.js
+│   │   └── useMobile.js
+│   ├── lib/              # Utility functions and libraries
+│   │   ├── models/       # Database models
+│   │   │   ├── BlogModel.js        # Blog data model
+│   │   │   └── QuestionSchema.js   # Question/Interview data model
+│   │   ├── auth/         # Authentication utilities
+│   │   │   └── utils.js  # Token generation, verification, password hashing
+│   │   ├── config/       # Configuration helpers
+│   │   │   ├── cloudinary.js  # Cloudinary setup
+│   │   │   └── mongodb.js     # MongoDB connection
+│   │   └── utils.js      # General utility functions
+│   ├── utils/            # Utility functions
+│   │   ├── generateSlug.js   # URL slug generator
+│   │   └── uploadImage.js    # Image upload handler
+│   ├── providers/        # React context providers
+│   │   ├── AppProviders.jsx      # Main app provider wrapper
+│   │   ├── AuthProvider.jsx      # Authentication context
+│   │   ├── ReactQueryProvider.jsx # React Query context
+│   │   ├── ThemeProvider.jsx     # Theme context
+│   │   └── ToastProvider.jsx     # Toast notification context
+│   ├── i18n/             # Internationalization (i18n)
+│   │   ├── config.js     # i18next configuration
+│   │   ├── i18n-helper.js  # Helper for loading i18n messages
+│   │   └── request.js    # i18n API requests
+│   ├── messages/         # i18n message files
+│   │   ├── ar.json       # Arabic translations
+│   │   └── en.json       # English translations
+│   └── assets/           # Application assets
+│       └── assets.js     # Asset exports
+├── public/               # Static assets
+│   ├── file.svg
+│   ├── globe.svg
+│   ├── logo.png
+│   ├── next.svg
+│   ├── vercel.svg
+│   └── window.svg
+├── .eslintrc.json        # ESLint configuration
+├── .gitignore            # Git ignore rules
+├── .env.local            # Environment variables
+├── jsconfig.json         # JavaScript configuration
+├── next.config.mjs       # Next.js configuration
+├── postcss.config.mjs    # PostCSS configuration
+├── tailwind.config.js    # Tailwind CSS configuration
+├── package.json          # Project dependencies and scripts
+├── package-lock.json     # Dependency lock file
+├── README.md             # Project documentation
+└── TheSteps.MD           # Development setup guide
 ```
 
-## Features List
-- Public blog with article listings
-- Article detail pages
-- Admin panel for content management
-- User authentication (To be implemented)
-- Content creation and editing
-- Image upload functionality
+## Features
+- **Public Blog**: Browse and read published blog articles
+- **Blog Categories**: Organized blog posts by topic
+- **Admin Dashboard**: Admin panel for managing content
+- **User Dashboard**: Personalized dashboard with multiple learning resources and tracking
+- **Learning Resources**: Access to tutorials, best practices, tips & tricks, troubleshooting guides
+- **Interview Preparation**: Interview questions, mock interviews, and theoretical cards
+- **Content Management**: Organize content across various categories including:
+  - AI Assistant resources
+  - Cheat sheets
+  - Documentation
+  - Challenges
+  - Roadmaps
+  - Bookmarks
+  - Notes
+  - Resume review guides
+- **Image Upload**: Integration with Cloudinary for image management
+- **Database Integration**: MongoDB with Mongoose for data persistence
+- **Multi-language Support**: Internationalization (i18n) with Arabic and English translations
+- **Responsive Design**: Tailwind CSS for responsive UI across devices
+- **Dark/Light Theme**: Theme switching support with next-themes
 
-## Live Demo
-(Add your live demo URL here when available)
-
-## Screenshots/GIFs
-(Add screenshots or GIFs showcasing the UI)
+## Project Status
+This project is actively under development. The core blog and dashboard infrastructure is in place with multiple learning resource sections and admin management capabilities.
 
 ## Roadmap
-- Implement user authentication
-- Add database integration
-- Implement comment functionality
-- Add search functionality
-- Improve mobile responsiveness
+- User authentication system (auth routes prepared but not yet implemented)
+- Comment functionality on blog posts
+- Search functionality across content
+- Content creation and editing UI in admin panel
+- User profile and preference management
+- Advanced dashboard analytics
+- Content recommendation system
 
 
 ## Challenges Faced & Solutions
@@ -220,22 +260,36 @@ blog-app-and-admin-panel/
    * **Challenge:** Unsure whether to complete all frontend UI before backend development or work on both in parallel.
    * **Solution:** Decided to complete a frontend skeleton (components, layouts, routing) first, then shift focus to backend APIs, followed by integration and refinement.
 
+---
 
- 
-## Lessons Learned
-(Share key takeaways from the project)
+## Key Dependencies
 
-## Client/Peer Feedback
-(Add any feedback received here)
+### UI & Animation
+- **Motion**: Animation library for smooth transitions and visual effects
+- **Radix UI**: Accessible component primitives (Avatar, Dropdown, Dialog, Tooltip, etc.)
+- **Lucide React**: Icon library with 546+ icons
+- **React Icons**: Additional icon library
 
-## Contribution Guidelines
-(Add contribution guidelines if open source)
+### Forms & Validation
+- **React Hook Form**: Efficient form state management
+- **Class Variance Authority**: CSS class utility for building UI variants
 
-## License
-(Specify your project license here)
+### Data & API
+- **Axios**: HTTP client for API requests
+- **TanStack React Query**: Powerful data fetching and caching
+- **TanStack React Query DevTools**: Debugging tools for React Query
+- **Mongoose**: MongoDB object modeling
 
+### Internationalization
+- **next-intl**: Next.js internationalization solution
+- **Markdown Support**: react-markdown with syntax highlighting
 
+### Styling & Theme
+- **Tailwind CSS**: Utility-first CSS framework
+- **next-themes**: Theme provider for dark/light mode
+- **tailwindcss-animate**: Tailwind animation utilities
+- **tailwind-merge**: Smart Tailwind class merging
 
-
-https://aniq-ui-template2.vercel.app/
-https://publino-template.vercel.app/
+### Media & Storage
+- **Cloudinary**: Cloud-based image management
+- **OGL**: WebGL library for 3D graphics (optional)
