@@ -9,13 +9,6 @@ export async function GET(request) {
     try {
         await connectDB();
         const blogs = await Blog.find();
-        if (!blogs) {
-            return NextResponse.json(
-                { success: false, message: "Blogs not found" },
-                { status: 404 }
-            );
-        }
-
         return NextResponse.json({ success: true, message: "Blogs Fetched successfully", blogs });
     }
     catch (error) {
@@ -25,7 +18,6 @@ export async function GET(request) {
         );
     }
 }
-
 
 export async function POST(request) {
     try {
