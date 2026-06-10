@@ -4,6 +4,7 @@ import Blog from '@/lib/models/BlogModel';
 import { uploadImageToCloudinary } from '@/utils/uploadImage';
 import { generateUniqueSlug } from '@/utils/generateSlug';
 // import { verifyToken } from "@/lib/auth/verifyToken";
+// import User from "@/lib/models/UserModel";
 
 export async function GET(request) {
     try {
@@ -22,15 +23,20 @@ export async function GET(request) {
 export async function POST(request) {
     try {
         await connectDB();
-        // verify user token(temporary object)
         const data = await request.formData();
-        // const decoded = await verifyToken(req);
-        const userJson = data.get("user") ? JSON.parse(data.get("user")) : null;
-        // const user = await User.findById(decoded.id);
+        const userJson = data.get("user") ? JSON.parse(data.get("user")) : null; // will be deleted after craete auth middleware
         if (!userJson) {
             return NextResponse.json({ error: "User not found" }, { status: 403 });
-        }
-        const user = userJson;
+        } // will be deleted after craete auth middleware
+        const user = userJson; // will be deleted after craete auth middleware
+        // const decoded = await verifyToken(request); // will be uncommented after craete auth middleware
+        // if (!decoded) {
+        //     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+        // } // will be uncommented after craete auth middleware 
+        // const user = await User.findById(decoded.id); // will be uncommented after craete auth middleware
+        // if (!user) {
+        //     return NextResponse.json({ error: "User not found" }, { status: 404 });
+        // } // will be uncommented after craete auth middleware
 
         // check if user is admin
         if (user.role !== "admin") {
@@ -89,7 +95,7 @@ export async function POST(request) {
             title: { en: data.get("titleEn").trim(), ar: data.get("titleAr").trim() },
             category: { en: data.get("categoryEn").trim(), ar: data.get("categoryAr").trim() },
             content: { en: data.get("contentEn").trim(), ar: data.get("contentAr").trim() },
-            author: user.id,
+            author: user.id, // user._id,
             authorName: { en: data.get("authorNameEn").trim(), ar: data.get("authorNameAr").trim() },
             image: imageUrl || null,
             authorImage: authorImage,
