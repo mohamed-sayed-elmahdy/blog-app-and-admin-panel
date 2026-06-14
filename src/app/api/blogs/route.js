@@ -9,7 +9,7 @@ import { generateUniqueSlug } from '@/utils/generateSlug';
 export async function GET(request) {
     try {
         await connectDB();
-        const blogs = await Blog.find();
+        const blogs = await Blog.find().sort({ createdAt: -1 });
         return NextResponse.json({ success: true, message: "Blogs Fetched successfully", blogs });
     }
     catch (error) {
@@ -56,7 +56,7 @@ export async function POST(request) {
             "tagsAr",
         ];
 
-        const missingFields = requiredFields.filter(field => !data.get(field));
+        const missingFields = requiredFields.filter(field => !data.get(field)?.trim());
         if (missingFields.length > 0) {
             return NextResponse.json({ error: `Missing required fields: ${missingFields.join(", ")}` }, { status: 400 });
         }
@@ -80,7 +80,9 @@ export async function POST(request) {
             "https://res.cloudinary.com/diw11kbbx/image/upload/v1760466884/myImg_cdouwg.png";
 
         // Generate unique slug
-        const uniqueSlug = await generateUniqueSlug(data.get("titleEn"));
+        const titleEn = data.get("titleEn").trim();
+        const titleAr = data.get("titleAr").trim();
+        const uniqueSlug = await generateUniqueSlug(titleEn);
 
         // Get tags
         const tagsEn = data.get("tagsEn")?.split(",").map(tag => tag.trim()).filter(Boolean) || [];
@@ -95,7 +97,7 @@ export async function POST(request) {
             : "draft";
         // Create blog data
         const blogData = {
-            title: { en: data.get("titleEn").trim(), ar: data.get("titleAr").trim() },
+            title: { en: titleEn, ar: titleAr },
             category: { en: data.get("categoryEn").trim(), ar: data.get("categoryAr").trim() },
             content: { en: data.get("contentEn").trim(), ar: data.get("contentAr").trim() },
             author: user.id, // user._id,
@@ -105,7 +107,7 @@ export async function POST(request) {
             authorImage: authorImage,
             tags: tags,
             status: status,
-            publishedAt: data.get("status") === "published" ? new Date() : undefined,
+            publishedAt: status === "published" ? new Date() : undefined,
             slug: uniqueSlug,
         };
         const blog = await Blog.create(blogData);

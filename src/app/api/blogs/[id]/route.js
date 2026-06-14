@@ -23,3 +23,11 @@ export async function GET(request, { params }) {
         );
     }
 }
+
+
+// GET by id
+// PUT update
+// DELETE
+// image replacement
+// slug update
+// authorization
