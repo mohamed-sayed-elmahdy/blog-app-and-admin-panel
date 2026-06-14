@@ -67,7 +67,7 @@ export async function POST(request) {
         if (blogImage) {
 
             // لو File
-            if (blogImage instanceof File) {
+            if (blogImage instanceof File && blogImage.size > 0) {
                 imageUrl = await uploadImageToCloudinary(blogImage, "blogs");
             }
             // لو String URL
@@ -83,13 +83,16 @@ export async function POST(request) {
         const uniqueSlug = await generateUniqueSlug(data.get("titleEn"));
 
         // Get tags
-        const tagsEn = data.get("tagsEn")?.split(",").map(tag => tag.trim()) || [];
-        const tagsAr = data.get("tagsAr")?.split(",").map(tag => tag.trim()) || [];
+        const tagsEn = data.get("tagsEn")?.split(",").map(tag => tag.trim()).filter(Boolean) || [];
+        const tagsAr = data.get("tagsAr")?.split(",").map(tag => tag.trim()).filter(Boolean) || [];
         const tags = tagsEn.map((enTag, i) => ({
             en: enTag,
             ar: tagsAr[i] || enTag, // fallback 
         }));
-
+        const allowedStatus = ["draft", "published"];
+        const status = allowedStatus.includes(data.get("status"))
+            ? data.get("status")
+            : "draft";
         // Create blog data
         const blogData = {
             title: { en: data.get("titleEn").trim(), ar: data.get("titleAr").trim() },
@@ -97,16 +100,23 @@ export async function POST(request) {
             content: { en: data.get("contentEn").trim(), ar: data.get("contentAr").trim() },
             author: user.id, // user._id,
             authorName: { en: data.get("authorNameEn").trim(), ar: data.get("authorNameAr").trim() },
+            // {en: user.nameEn, ar: user.nameAr}
             image: imageUrl || null,
             authorImage: authorImage,
             tags: tags,
-            status: data.get("status") || "draft",
+            status: status,
             publishedAt: data.get("status") === "published" ? new Date() : undefined,
             slug: uniqueSlug,
         };
         const blog = await Blog.create(blogData);
         // return response
-        return NextResponse.json({ success: true, message: "Blog created successfully", blog });
+        return NextResponse.json({
+            success: true, message: "Blog created successfully",
+            blog: {
+                _id: blog._id,
+                slug: blog.slug
+            }
+        });
     }
 
     catch (error) {
