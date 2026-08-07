@@ -75,16 +75,16 @@ function PublicNavbar() {
           <Link href="/login" className="text-[var(--text)] font-medium hover:text-[var(--text-active)] transition-all divide-purple-300" onClick={toggleMenu}>
             Login
           </Link>
-          {/* Sign In Button */}
+          {/* Sign Up Button */}
           <ButtonLink
-            href="/signin"
+            href="/signup"
             className="hidden md:flex justify-center items-center 
            gap-2 bg-transparent border-[var(--border-blur)]
            hover:bg-[var(--btn-bg-hover)] hover:border-[var(--btn-border-hover)] 
            backdrop-blur-3xl rounded-3xl border 
            text-[var(--text)] font-semibold py-2 px-6 transition-all duration-300"
           >
-            Sign In <CiLocationArrow1 className="text-xl" />
+            Sign Up <CiLocationArrow1 className="text-xl" />
           </ButtonLink>
           {/* Menu Button */}
           <button
@@ -127,14 +127,14 @@ function PublicNavbar() {
             Login
           </Link>
           <ButtonLink
-            href="/signin"
+            href="/signup"
             className="flex md:hidden justify-center items-center 
            gap-2 bg-transparent border-[var(--btn-border)] 
            hover:bg-[var(--btn-bg-hover)] hover:border-[var(--btn-border-hover)] 
            backdrop-blur-3xl rounded-3xl border 
            text-[var(--text)] font-semibold   py-2 px-6 transition-all duration-300"
           >
-            Sign In <CiLocationArrow1 className="text-xl" />
+            Sign Up <CiLocationArrow1 className="text-xl" />
           </ButtonLink>
         </div>
       </div>

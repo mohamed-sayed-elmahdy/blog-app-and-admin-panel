@@ -34,7 +34,7 @@ blog-app-and-admin-panel/
 │   │   │   │   └── page.jsx      # Blog listing page
 │   │   │   ├── login/
 │   │   │   │   └── page.jsx
-│   │   │   ├── signin/
+│   │   │   ├── signup/
 │   │   │   │   └── page.jsx
 │   │   │   ├── test/
 │   │   │   │   └── page.jsx

@@ -16,7 +16,7 @@ export default function LoginForm({
 }) {
     return (
         <div className={cn("flex flex-col gap-6", className)} {...props}>
-            <Card className="overflow-hidden p-0">
+            <Card className="overflow-hidden p-0 rounded-3xl">
                 <CardContent className="grid p-0">
                     <form className="p-6 md:p-8">
                         <FieldGroup>
@@ -83,11 +83,11 @@ export default function LoginForm({
                                 </Button>
                             </Field>
                             <FieldDescription className="text-center">
-                                Don&apos;t have an account? <a href="#">Sign up</a>
+                                Don&apos;t have an account? <a href="/signup">Sign up</a>
                             </FieldDescription>
                         </FieldGroup>
                     </form>
-        
+
                 </CardContent>
             </Card>
             <FieldDescription className="px-6 text-center">

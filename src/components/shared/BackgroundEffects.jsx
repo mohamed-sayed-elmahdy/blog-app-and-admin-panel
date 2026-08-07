@@ -1,7 +1,7 @@
 "use client";
 import LightRays from "@/components/ui/LightRays";
 import { useTheme } from "next-themes";
-export default function BackgroundEffects({  className, ShowLightRays = true, showCornerGradients = true }) {
+export default function BackgroundEffects({  className, showLightRays = true, showCornerGradients = true }) {
     const { resolvedTheme } = useTheme();
     return (
         <div className={` ${className}`}>
@@ -44,7 +44,7 @@ export default function BackgroundEffects({  className, ShowLightRays = true, sh
             </div>
 
             {/* LightRays */}
-            {ShowLightRays && <div className="w-full h-[100vh] fixed z-[-1]">
+            {showLightRays && <div className="w-full h-[100vh] fixed z-[-1]">
                 <LightRays
                     raysOrigin="top-center"
                     raysColor={resolvedTheme === "dark" ? "#fff" : "#00ffff"}
