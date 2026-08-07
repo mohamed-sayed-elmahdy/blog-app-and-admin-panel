@@ -51,7 +51,7 @@ function PublicNavbar() {
           {/* <span className="text-[var(--text)] text-lg md:text-3xl font-extrabold">
             Frontend Forge
           </span> */}
-          <Image src="/logo3.png" alt="Frontend Forge Logo" width={60} height={40} className="mr-2" />
+          <Image src="/logo3.png" alt="Frontend Forge Logo" width={40} height={40} className="mr-2" />
         </Link>
 
         <div className="hidden md:flex items-center gap-4 md:gap-6 lg:gap-4 text-[var(--text)]">

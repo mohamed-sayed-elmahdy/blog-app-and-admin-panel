@@ -197,6 +197,16 @@ blog-app-and-admin-panel/
 - **Multi-language Support**: Internationalization (i18n) with Arabic and English translations
 - **Responsive Design**: Tailwind CSS for responsive UI across devices
 - **Dark/Light Theme**: Theme switching support with next-themes
+MongoDB ✅
+Cloudinary ✅
+Slug Generation ✅
+Multilingual Content ✅
+Admin Validation ✅
+Draft / Published Status ✅
+Structured Tags ✅
+API Design كويس ✅
+
+
 
 ## Project Status
 This project is actively under development. The core blog and dashboard infrastructure is in place with multiple learning resource sections and admin management capabilities.

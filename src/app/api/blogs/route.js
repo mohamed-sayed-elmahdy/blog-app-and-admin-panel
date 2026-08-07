@@ -126,3 +126,23 @@ export async function POST(request) {
     }
 }
 
+
+
+
+// auth & authorization flow for POST, PUT and DELETE
+// ↓
+// verifyToken()
+// ↓
+// 401 لو فشل
+// ↓
+// User.findById()
+// ↓
+// 404 لو المستخدم غير موجود
+// ↓
+// Check Role
+// ↓
+// 403 لو ليس Admin
+// ↓
+// Execute Action
+// ↓
+// Return Response
