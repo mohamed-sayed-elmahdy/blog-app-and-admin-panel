@@ -3,7 +3,7 @@ import "./globals.css";
 import AppProviders  from "@/providers/AppProviders";
 import { NextIntlClientProvider } from 'next-intl';
 import getMessagesOnce from "@/i18n/i18n-helper";
-
+import { Analytics } from "@vercel/analytics/next"
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -40,6 +40,7 @@ export default async function RootLayout({ children }) {
         <NextIntlClientProvider messages={messages}>
           <AppProviders>{children}</AppProviders>
         </NextIntlClientProvider>
+        <Analytics />
       </body>
     </html>
   );
