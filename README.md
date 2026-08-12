@@ -1,6 +1,6 @@
 # Frontend Forge platform with Admin Panel
 
-**Live Demo:** [https://frontend-forge.vercel.app](https://frontend-forge.vercel.app)
+**Live Demo:** [https://blog-app-and-admin-panel.vercel.app](https://blog-app-and-admin-panel.vercel.app)
 
 ## Project Description
 A full-stack blog application built with Next.js featuring a public-facing blog, user dashboard, and admin panel for content management. The project includes multiple learning resources, interview preparation tools, and content management capabilities.
