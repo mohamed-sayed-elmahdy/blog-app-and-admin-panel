@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { ClipboardList, TrendingUp, Target } from 'lucide-react';
 
 export default function InterviewsPage() {

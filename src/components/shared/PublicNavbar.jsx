@@ -79,12 +79,21 @@ function PublicNavbar() {
           <ButtonLink
             href="/signup"
             className="hidden md:flex justify-center items-center 
-           gap-2 bg-transparent border-[var(--border-blur)]
-           hover:bg-[var(--btn-bg-hover)] hover:border-[var(--btn-border-hover)] 
-           backdrop-blur-3xl rounded-3xl border 
-           text-[var(--text)] font-semibold py-2 px-6 transition-all duration-300"
+           gap-2 bg-[var(--white)] 
+           hover:bg-[var(--black)]
+           hover:text-[var(--white)]
+           backdrop-blur-3xl   
+           text-[var(--secondary-text-color)] font-semibold 
+           py-2 px-6 transition-all duration-300
+           relative z-10  sm:px-3 text-sm 
+           rounded-full 
+            w-full sm:w-auto
+            shadow-[var(--white)] 
+            shadow-[1px_1px_10px_rgba(0,0,0,0.05)]
+            "
           >
-            Sign Up <CiLocationArrow1 className="text-xl" />
+
+            Sign Up <CiLocationArrow1 className="text-xl " />
           </ButtonLink>
           {/* Menu Button */}
           <button
@@ -129,13 +138,21 @@ function PublicNavbar() {
           <ButtonLink
             href="/signup"
             className="flex md:hidden justify-center items-center 
-           gap-2 bg-transparent border-[var(--btn-border)] 
-           hover:bg-[var(--btn-bg-hover)] hover:border-[var(--btn-border-hover)] 
-           backdrop-blur-3xl rounded-3xl border 
-           text-[var(--text)] font-semibold   py-2 px-6 transition-all duration-300"
+            gap-2 bg-[var(--white)] 
+           hover:bg-[var(--black)]
+           hover:text-[var(--white)]
+           backdrop-blur-3xl   
+           text-[var(--secondary-text-color)] font-semibold 
+           py-2 px-6 transition-all duration-300
+           relative z-10  sm:px-3 text-sm 
+           rounded-full 
+            w-full sm:w-auto
+            shadow-[var(--white)] 
+            shadow-[1px_1px_10px_rgba(0,0,0,0.05)]"
           >
             Sign Up <CiLocationArrow1 className="text-xl" />
           </ButtonLink>
+                
         </div>
       </div>
     </div>

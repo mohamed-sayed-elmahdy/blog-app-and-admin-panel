@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+
 import PublicNavbar from "@/components/shared/PublicNavbar";
 import PublicFooter from "@/components/shared/PublicFooter";
 import BackgroundEffects from "@/components/shared/BackgroundEffects";
