@@ -12,6 +12,7 @@ Instead of switching between different platforms for tutorials, documentation, c
 
 🔗 **Live Application:**
 [Live Application](https://frontend-forge-platform.vercel.app/)
+🔗 **User Dashboard:**
 [User Dashboard](https://frontend-forge-platform.vercel.app/dashboard/)
 ---
 
