@@ -2,7 +2,9 @@
   "lang": "ar",
   "home": {
     "siteTitle": "ستورى كرافت",
-    "hero-description": "اكتشف القصة الكاملة لأي شخص أو شركة في سوقك للوصول إلى المزيد من العملاء وتحويلهم بثقة أكبر."
+    "hero-firstLine": "كل ما تحتاجه لتتطور",
+    "hero-secondLine": "كمهندس برمجيات",
+    "hero-description": "منصة واحدة لتتعلم، وتتدرب، وتطور مهاراتك، وتستعد للمقابلات، وتبني ثقتك التقنية"
   },
   "metadata": {
     "title": "ستورى كرافت",
@@ -54,7 +56,6 @@
       "apple": "/apple-touch-icon.png"
     }
   },
-
   "admin": {
     "adminBreadcrumbs": {
       "adminDashboard": "لوحة التحكم",
@@ -67,92 +68,72 @@
       "blogSubscriptions": "اشتراكات المدونة"
     }
   },
-
   "user": {
     "userBreadcrumbs": {
       "userDashboard": "لوحة التحكم",
-
       "feed": "الخلاصة",
       "trending-tutorials": "الدروس الأكثر رواجًا",
       "latest-challenges": "أحدث التحديات",
       "continue-learning": "استكمل التعلم",
-
       "mock-interviews": "المقابلات التجريبية",
       "human": "مقابلة مع شخص",
       "ai": "مقابلة بالذكاء الاصطناعي",
       "feedback": "تقييم المقابلة",
-
       "interviews": "المقابلات",
       "react": "مقابلات React",
       "javascript": "مقابلات JavaScript",
       "nextjs": "مقابلات Next.js",
       "typescript": "مقابلات TypeScript",
-
       "resume-review": "مراجعة السيرة الذاتية",
       "ats-score": "فحص توافق ATS",
-
       "roadmaps": "الخرائط التعليمية",
       "frontend": "خريطة Frontend",
-
       "tutorials": "الدروس",
-
       "how-to": "كيفية التنفيذ",
       "authentication": "بناء نظام تسجيل الدخول",
       "deployment": "نشر تطبيق Next.js",
       "performance": "تحسين الأداء",
-
       "tips-and-tricks": "نصائح وحيل",
       "productivity": "إنتاجية المطور",
-
       "cheat-sheets": "أوراق الغش",
       "git": "ورقة Git المختصرة",
-
       "best-practices": "أفضل الممارسات",
       "clean-code": "الكود النظيف",
       "project-structure": "هيكلة المشروع",
-
       "troubleshooting": "حل المشكلات",
       "hydration-errors": "حل أخطاء Hydration",
       "debugging": "تصحيح تطبيقات React",
       "build-errors": "حل مشاكل البناء",
-
       "challenges": "التحديات",
       "easy": "تحديات سهلة",
       "medium": "تحديات متوسطة",
       "hard": "تحديات صعبة",
-
       "notes": "الملاحظات",
       "my-notes": "ملاحظاتي",
       "snippets": "الأكواد المحفوظة",
       "drafts": "المسودات السريعة",
-
       "bookmarks": "المحفوظات",
       "blogs": "المدونات",
       "saved-blogs": "المدونات المحفوظة",
       "saved-tutorials": "الدروس المحفوظة",
       "saved-interviews": "المقابلات المحفوظة",
-
       "all": "كل المدونات",
       "popular": "المنشورات الشائعة",
       "latest": "أحدث المقالات",
-
       "documentation": "التوثيق",
       "getting-started": "البدء",
       "api-reference": "مرجع API",
       "components": "المكونات",
       "changelog": "سجل التحديثات",
-
       "ai-assistant": "مساعد الذكاء الاصطناعي",
       "explain-code": "شرح الكود",
       "fix-errors": "إصلاح الأخطاء",
       "generate-components": "توليد المكونات",
-
       "settings": "الإعدادات",
       "general": "عام",
       "appearance": "المظهر",
       "notifications": "الإشعارات",
       "billing": "الفواتير",
-
       "support": "الدعم",
       "feedback-page": "التقييمات"
     }

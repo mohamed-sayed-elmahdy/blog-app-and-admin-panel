@@ -2,7 +2,9 @@
   "lang": "en",
   "home": {
     "siteTitle": "StoryCraft",
-    "hero-description": "Unlock the full story of any person or company on your market to gain access to more customers and convert them with more confidence."
+    "hero-firstLine": "Everything You Need to",
+    "hero-secondLine": "Grow as a software Engineer",
+    "hero-description": "One platform to learn, practice, sharpen your skills, prepare for interviews, and build your technical confidence"
   },
   "metadata": {
     "title": "StoryCraft",

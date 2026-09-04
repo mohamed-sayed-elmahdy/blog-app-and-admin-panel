@@ -7,14 +7,14 @@ import { useTranslations } from 'next-intl';
 export default function HeroSection() {
   const [secondLineVisible, setSecondLineVisible] = useState(false);
   const t = useTranslations("home");
-//  const checkRegistration = () => {
-//     const isRegistered = localStorage.getItem("isRegistered");
-//     if (isRegistered) {
-//       window.location.href = "/dashboard";
-//     } else {
-//       window.location.href = "/login";
-//     }
-//   }
+  //  const checkRegistration = () => {
+  //     const isRegistered = localStorage.getItem("isRegistered");
+  //     if (isRegistered) {
+  //       window.location.href = "/dashboard";
+  //     } else {
+  //       window.location.href = "/login";
+  //     }
+  //   }
 
   const titleClass = "text-4xl sm:text-5xl lg:text-6xl font-bold text-[var(--text)] leading-tight";
 
@@ -27,23 +27,27 @@ export default function HeroSection() {
             <div>
               <div className="text-center">
                 <BlurText
-                  text="Predictable Growth"
+                  text={t("hero-firstLine")}
                   delay={300}
                   animateBy="words"
                   direction="top"
                   className={titleClass}
-                  onAnimationComplete={() => { setSecondLineVisible(true) }}
+                  onAnimationComplete={() => setSecondLineVisible(true)}
                 />
 
-         {secondLineVisible ? (
-           <BlurText
-             text="Starts Here."
-             delay={100}
-             animateBy="words"
-             direction="top"
-             className={titleClass}
-           />
-         ) : <h1 className={`${titleClass} invisible`}>Starts Here.</h1>}
+                {secondLineVisible ? (
+                  <BlurText
+                    text={t("hero-secondLine")}
+                    delay={100}
+                    animateBy="words"
+                    direction="top"
+                    className={titleClass}
+                  />
+                ) : (
+                  <h1 className={`${titleClass} invisible`}>
+                    {t("hero.title.secondLine")}
+                  </h1>
+                )}
 
               </div>
 
