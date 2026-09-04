@@ -20,6 +20,9 @@
 # production
 /build
 
+# notes - keep all notes out of GitHub
+/notes/
+
 # misc
 .DS_Store
 *.pem

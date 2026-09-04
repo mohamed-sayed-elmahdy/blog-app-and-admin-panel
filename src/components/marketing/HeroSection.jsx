@@ -28,7 +28,7 @@ export default function HeroSection() {
               <div className="text-center">
                 <BlurText
                   text={t("hero-firstLine")}
-                  delay={300}
+                  delay={200}
                   animateBy="words"
                   direction="top"
                   className={titleClass}
@@ -38,14 +38,14 @@ export default function HeroSection() {
                 {secondLineVisible ? (
                   <BlurText
                     text={t("hero-secondLine")}
-                    delay={100}
+                    delay={200}
                     animateBy="words"
                     direction="top"
                     className={titleClass}
                   />
                 ) : (
                   <h1 className={`${titleClass} invisible`}>
-                    {t("hero.title.secondLine")}
+                    {t("hero-secondLine")}
                   </h1>
                 )}
 
