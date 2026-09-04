@@ -519,9 +519,8 @@ export function AppSidebar({
                   <Image src="/logo3.png" alt="Frontend Forge Logo" width={50} height={40}  />
 
                 </div>
-                <div className="grid text-left text-sm leading-tight">
-                  <span className="truncate font-semibold">FrontEnd</span>
-                  <span className="truncate text-xs">Forge</span>
+                <div className="flex  text-left text-sm leading-tight">
+                  <span className="truncate font-semibold">Frontend Forge</span>
                 </div>
               </Link>
             </SidebarMenuButton>
